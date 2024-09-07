@@ -1,0 +1,1056 @@
+Script started on 2024-08-15 20:32:40-06:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="70" LINES="42"]
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ppss
+[?2004l    PID TTY          TIME CMD
+  96750 pts/3    00:00:00 bash
+  96785 pts/3    00:00:00 ps
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nnaannoo  ppaarraalllleell	__	nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 5 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..254[32m};[39m(B[m [32mdo[5;9H[39m(B[mparallel nc -p20-25 192.186.1.(B[0;1m[31m$1[39m(B[m [32m;[6ddone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOA[?25l[?12l[?25h[AOB[?25l[?12l[?25h[5dOC[?25l[?12l[?25h[5;9HOC[?25l[?12l[?25hpOB[?25l[?12l[?25h[6;5HOA[?25l[?12l[?25h[5;10HOD[?25l[?12l[?25h#[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[5;10H[39m(B[mOD[?25l[?12l[?25h[?25l7[5;39r8M[1;42r[5;8H[42m[1K[6d[49m(B[m[8P[?12l[?25h[?25l[5;39r[39;1H
+[1;42r[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[5;9H[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[6;5HOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25h[?25l7[6;40r8M[1;42r[7;1H[?12l[?25hOB[?25l[?12l[?25h[8dOA[?25l[?12l[?25h[AOA[?25l[?12l[?25h[A	[?25l[?12l[?25h[8G[42m[1K [49m(B[me[?25l[?12l[?25h[1K ec[?25l[?12l[?25hch[?25l[?12l[?25hho[?25l[?12l[?25h(B[0;1m[34mecho[39m(B[m [?25l[?12l[?25h[42m [49m(B[m1[?25l[?12l[?25h 19[?25l[?12l[?25h9.[?25l[?12l[?25h.[?25l[?12l[?25h 2[?25l[?12l[?25h2.[?25l[?12l[?25h.OD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25h"[?25l[?12l[?25h"192.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h9OC[?25l[?12l[?25h2OC[?25l[?12l[?25h.1[?25l[?12l[?25h19[?25l[?12l[?25h98[?25l[?12l[?25h8[?25l[?12l[?25h [?25l[?12l[?25h 6[?25l[?12l[?25h68[?25l[?12l[?25h8.[?25l[?12l[?25h.1[?25l[?12l[?25h1.[?25l[?12l[?25h.1[?25l[?12l[?25h1[?25l[?12l[?25h 0[?25l[?12l[?25h0[?25l[?12l[?25h $[?25l[?12l[?25h[32m$[39m(B[m1[?25l[?12l[?25h(B[0;1m[31m$1[39m(B[m"[?25l[?12l[?25h[6;14H(B[0;1m[33m"192.168.1.$1"[39m(B[m[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;28H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [B[C[C[C[C[C[C[K[B..//ppaarr``[K	allel__	nc_scan.sh 
+[?2004l192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+192.168.1.
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh [A[C[C[C[C[C[C[3@nano [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..254[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"192.168.1.$1"[7d(B[0m[32mdone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[40d[K[?12l[?25h[6;24HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[C[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;26H(B[0;1m[33m"[39m(B[m[Ki[?25l[?12l[?25h(B[0;1m[33mi"[39m(B[m[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;27H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [A[C[C[C[C[C[C[3P./[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C\\
+[?2004l[?2004h> 
+[?2004l192.168.1.1
+192.168.1.2
+192.168.1.3
+192.168.1.4
+192.168.1.5
+192.168.1.6
+192.168.1.7
+192.168.1.8
+192.168.1.9
+192.168.1.10
+192.168.1.11
+192.168.1.12
+192.168.1.13
+192.168.1.14
+192.168.1.15
+192.168.1.16
+192.168.1.17
+192.168.1.18
+192.168.1.19
+192.168.1.20
+192.168.1.21
+192.168.1.22
+192.168.1.23
+192.168.1.24
+192.168.1.25
+192.168.1.26
+192.168.1.27
+192.168.1.28
+192.168.1.29
+192.168.1.30
+192.168.1.31
+192.168.1.32
+192.168.1.33
+192.168.1.34
+192.168.1.35
+192.168.1.36
+192.168.1.37
+192.168.1.38
+192.168.1.39
+192.168.1.40
+192.168.1.41
+192.168.1.42
+192.168.1.43
+192.168.1.44
+192.168.1.45
+192.168.1.46
+192.168.1.47
+192.168.1.48
+192.168.1.49
+192.168.1.50
+192.168.1.51
+192.168.1.52
+192.168.1.53
+192.168.1.54
+192.168.1.55
+192.168.1.56
+192.168.1.57
+192.168.1.58
+192.168.1.59
+192.168.1.60
+192.168.1.61
+192.168.1.62
+192.168.1.63
+192.168.1.64
+192.168.1.65
+192.168.1.66
+192.168.1.67
+192.168.1.68
+192.168.1.69
+192.168.1.70
+192.168.1.71
+192.168.1.72
+192.168.1.73
+192.168.1.74
+192.168.1.75
+192.168.1.76
+192.168.1.77
+192.168.1.78
+192.168.1.79
+192.168.1.80
+192.168.1.81
+192.168.1.82
+192.168.1.83
+192.168.1.84
+192.168.1.85
+192.168.1.86
+192.168.1.87
+192.168.1.88
+192.168.1.89
+192.168.1.90
+192.168.1.91
+192.168.1.92
+192.168.1.93
+192.168.1.94
+192.168.1.95
+192.168.1.96
+192.168.1.97
+192.168.1.98
+192.168.1.99
+192.168.1.100
+192.168.1.101
+192.168.1.102
+192.168.1.103
+192.168.1.104
+192.168.1.105
+192.168.1.106
+192.168.1.107
+192.168.1.108
+192.168.1.109
+192.168.1.110
+192.168.1.111
+192.168.1.112
+192.168.1.113
+192.168.1.114
+192.168.1.115
+192.168.1.116
+192.168.1.117
+192.168.1.118
+192.168.1.119
+192.168.1.120
+192.168.1.121
+192.168.1.122
+192.168.1.123
+192.168.1.124
+192.168.1.125
+192.168.1.126
+192.168.1.127
+192.168.1.128
+192.168.1.129
+192.168.1.130
+192.168.1.131
+192.168.1.132
+192.168.1.133
+192.168.1.134
+192.168.1.135
+192.168.1.136
+192.168.1.137
+192.168.1.138
+192.168.1.139
+192.168.1.140
+192.168.1.141
+192.168.1.142
+192.168.1.143
+192.168.1.144
+192.168.1.145
+192.168.1.146
+192.168.1.147
+192.168.1.148
+192.168.1.149
+192.168.1.150
+192.168.1.151
+192.168.1.152
+192.168.1.153
+192.168.1.154
+192.168.1.155
+192.168.1.156
+192.168.1.157
+192.168.1.158
+192.168.1.159
+192.168.1.160
+192.168.1.161
+192.168.1.162
+192.168.1.163
+192.168.1.164
+192.168.1.165
+192.168.1.166
+192.168.1.167
+192.168.1.168
+192.168.1.169
+192.168.1.170
+192.168.1.171
+192.168.1.172
+192.168.1.173
+192.168.1.174
+192.168.1.175
+192.168.1.176
+192.168.1.177
+192.168.1.178
+192.168.1.179
+192.168.1.180
+192.168.1.181
+192.168.1.182
+192.168.1.183
+192.168.1.184
+192.168.1.185
+192.168.1.186
+192.168.1.187
+192.168.1.188
+192.168.1.189
+192.168.1.190
+192.168.1.191
+192.168.1.192
+192.168.1.193
+192.168.1.194
+192.168.1.195
+192.168.1.196
+192.168.1.197
+192.168.1.198
+192.168.1.199
+192.168.1.200
+192.168.1.201
+192.168.1.202
+192.168.1.203
+192.168.1.204
+192.168.1.205
+192.168.1.206
+192.168.1.207
+192.168.1.208
+192.168.1.209
+192.168.1.210
+192.168.1.211
+192.168.1.212
+192.168.1.213
+192.168.1.214
+192.168.1.215
+192.168.1.216
+192.168.1.217
+192.168.1.218
+192.168.1.219
+192.168.1.220
+192.168.1.221
+192.168.1.222
+192.168.1.223
+192.168.1.224
+192.168.1.225
+192.168.1.226
+192.168.1.227
+192.168.1.228
+192.168.1.229
+192.168.1.230
+192.168.1.231
+192.168.1.232
+192.168.1.233
+192.168.1.234
+192.168.1.235
+192.168.1.236
+192.168.1.237
+192.168.1.238
+192.168.1.239
+192.168.1.240
+192.168.1.241
+192.168.1.242
+192.168.1.243
+192.168.1.244
+192.168.1.245
+192.168.1.246
+192.168.1.247
+192.168.1.248
+192.168.1.249
+192.168.1.250
+192.168.1.251
+192.168.1.252
+192.168.1.253
+192.168.1.254
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh \[A[C[C[C[C[C[Cnano parallel_nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..254[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"192.168.1.$i"[7d(B[0m[32mdone[2d[39m(B[m[?12l[?25h[?25l[40;28H (B[0;7m[ Writing... ](B[m[K[1;69H[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[2d[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ mmaann  ppaarraalllleell
+[?2004l[?1049h[22;0;0t[?1h=PARALLEL(1)                   parallel                   PARALLEL(1)[m
+[m
+[1mNAME[0m[m
+       parallel - build and execute shell command lines from[m
+       standard input in parallel[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mparallel[0m [options] [[4mcommand[24m [arguments]] < list_of_arguments[m
+[m
+       [1mparallel[0m [options] [[4mcommand[24m [arguments]] ( [1m:::[0m arguments |[m
+       [1m:::+[0m arguments | [1m::::[0m argfile(s) | [1m::::+[0m argfile(s) ) ...[m
+[m
+       [1mparallel[0m --semaphore [options] [4mcommand[24m[m
+[m
+       [1m#!/usr/bin/parallel[0m --shebang [options] [[4mcommand[24m [arguments]][m
+[m
+       [1m#!/usr/bin/parallel[0m --shebang-wrap [options] [[4mcommand[24m[m
+       [arguments]][m
+[m
+[1mDESCRIPTION[0m[m
+       STOP![m
+[m
+       Read the [1mReader's[0m [1mguide[0m below if you are new to GNU [1mparallel[0m.[m
+[m
+       GNU [1mparallel[0m is a shell tool for executing jobs in parallel[m
+       using one or more computers. A job can be a single command or[m
+       a small script that has to be run for each of the lines in[m
+       the input. The typical input is a list of files, a list of[m
+       hosts, a list of users, a list of URLs, or a list of tables.[m
+       A job can also be a command that reads from a pipe. GNU[m
+       [1mparallel[0m can then split the input into blocks and pipe a[m
+       block into each command in parallel.[m
+[m
+       If you use xargs and tee today you will find GNU [1mparallel[0m[m
+       very easy to use as GNU [1mparallel[0m is written to have the same[m
+       options as xargs. If you write loops in shell, you will find[m
+       GNU [1mparallel[0m may be able to replace most of the loops and[m
+       make them run faster by running several jobs in parallel.[m
+[m
+       GNU [1mparallel[0m makes sure output from the commands is the same[m
+       output as you would get had you run the commands[m
+[7m Manual page parallel(1) line 1 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       sequentially. This makes it possible to use output from GNU[m
+[7m Manual page parallel(1) line 2 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1mparallel[0m as input for other programs.[m
+[7m Manual page parallel(1) line 3 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 4 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       For each line of input GNU [1mparallel[0m will execute [4mcommand[24m with[m
+[7m Manual page parallel(1) line 5 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       the line as arguments. If no [4mcommand[24m is given, the line of[m
+[7m Manual page parallel(1) line 6 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       input is executed. Several lines will be run in parallel. GNU[m
+[7m Manual page parallel(1) line 7 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1mparallel[0m can often be used as a substitute for [1mxargs[0m or [1mcat[0m [1m|[0m[m
+[7m Manual page parallel(1) line 8 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1mbash[0m.[m
+[7m Manual page parallel(1) line 9 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 10 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K   [1mReader's[0m [1mguide[0m[m
+[7m Manual page parallel(1) line 11 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       GNU [1mparallel[0m includes the 4 types of documentation: Tutorial,[m
+[7m Manual page parallel(1) line 12 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       how-to, reference and explanation.[m
+[7m Manual page parallel(1) line 13 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 14 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [4mTutorial[24m[m
+[7m Manual page parallel(1) line 15 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 16 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       If you prefer reading a book buy [1mGNU[0m [1mParallel[0m [1m2018[0m at[m
+[7m Manual page parallel(1) line 17 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       https://www.lulu.com/shop/ole-tange/gnu-parallel-2018/paperback[m [7m Manual page parallel(1) line 18 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K/product-23558902.html[m
+[7m Manual page parallel(1) line 19 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       or download it at: https://doi.org/10.5281/zenodo.1146014[m
+[7m Manual page parallel(1) line 20 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       Read at least chapter 1+2. It should take you less than 20[m
+[7m Manual page parallel(1) line 21 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       minutes.[m
+[7m Manual page parallel(1) line 22 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 23 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       Otherwise start by watching the intro videos for a quick[m
+[7m Manual page parallel(1) line 24 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       introduction:[m
+[7m Manual page parallel(1) line 25 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       https://youtube.com/playlist?list=PL284C9FF2488BC6D1[m
+[7m Manual page parallel(1) line 26 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 27 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       If you want to dive deeper: spend a couple of hours walking[m
+[7m Manual page parallel(1) line 28 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       through the tutorial ([1mman[0m [1mparallel_tutorial[0m). Your command[m
+[7m Manual page parallel(1) line 29 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       line will love you for it.[m
+[7m Manual page parallel(1) line 30 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 31 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [4mHow-to[24m[m
+[7m Manual page parallel(1) line 32 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 33 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       You can find a lot of [1mEXAMPLE[0ms of use after the list of[m
+[7m Manual page parallel(1) line 34 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1mOPTIONS[0m in [1mman[0m [1mparallel[0m (Use [1mLESS=+/EXAMPLE:[0m [1mman[0m [1mparallel[0m).[m
+[7m Manual page parallel(1) line 35 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       That will give you an idea of what GNU [1mparallel[0m is capable[m
+[7m Manual page parallel(1) line 36 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       of, and you may find a solution you can simply adapt to your[m
+[7m Manual page parallel(1) line 37 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       situation.[m
+[7m Manual page parallel(1) line 38 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 39 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [4mReference[24m[m
+[7m Manual page parallel(1) line 40 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 41 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       If you need a one page printable cheat sheet you can find it[m
+[7m Manual page parallel(1) line 42 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       on: https://www.gnu.org/software/parallel/parallel_cheat.pdf[m
+[7m Manual page parallel(1) line 43 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 44 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       The man page is the reference for all options.[m
+[7m Manual page parallel(1) line 45 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 46 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [4mDesign[24m [4mdiscussion[24m[m
+[7m Manual page parallel(1) line 47 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 48 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       If you want to know the design decisions behind GNU [1mparallel[0m,[m
+[7m Manual page parallel(1) line 49 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       try: [1mman[0m [1mparallel_design[0m. This is also a good intro if you[m
+[7m Manual page parallel(1) line 50 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       intend to change GNU [1mparallel[0m.[m
+[7m Manual page parallel(1) line 51 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 52 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[1mOPTIONS[0m[m
+[7m Manual page parallel(1) line 53 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [4mcommand[24m[m
+[7m Manual page parallel(1) line 54 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Command to execute.  If [4mcommand[24m or the following[m
+[7m Manual page parallel(1) line 55 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           arguments contain replacement strings (such as [1m{}[0m) every[m
+[7m Manual page parallel(1) line 56 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           instance will be substituted with the input.[m
+[7m Manual page parallel(1) line 57 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 58 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           If [4mcommand[24m is given, GNU [1mparallel[0m solve the same tasks as[m
+[7m Manual page parallel(1) line 58 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1mxargs[0m. If [4mcommand[24m is not given GNU [1mparallel[0m will behave[m
+[7m Manual page parallel(1) line 59 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           similar to [1mcat[0m [1m|[0m [1msh[0m.[m
+[7m Manual page parallel(1) line 60 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 61 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The [4mcommand[24m must be an executable, a script, a composed[m
+[7m Manual page parallel(1) line 62 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           command, an alias, or a function.[m
+[7m Manual page parallel(1) line 63 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 64 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1mBash[0m [1mfunctions[0m: [1mexport[0m [1m-f[0m the function first or use[m
+[7m Manual page parallel(1) line 65 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1menv_parallel[0m.[m
+[7m Manual page parallel(1) line 66 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 67 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1mBash,[0m [1mCsh,[0m [1mor[0m [1mTcsh[0m [1maliases[0m: Use [1menv_parallel[0m.[m
+[7m Manual page parallel(1) line 68 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 69 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1mZsh,[0m [1mFish,[0m [1mKsh,[0m [1mand[0m [1mPdksh[0m [1mfunctions[0m [1mand[0m [1maliases[0m: Use[m
+[7m Manual page parallel(1) line 70 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1menv_parallel[0m.[m
+[7m Manual page parallel(1) line 71 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 72 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{}[0m  Input line. This replacement string will be replaced by a[m
+[7m Manual page parallel(1) line 73 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           full line read from the input source. The input source is[m
+[7m Manual page parallel(1) line 74 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           normally stdin (standard input), but can also be given[m
+[7m Manual page parallel(1) line 75 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           with [1m-a[0m, [1m:::[0m, or [1m::::[0m.[m
+[7m Manual page parallel(1) line 76 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 77 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{}[0m can be changed with [1m-I[0m.[m
+[7m Manual page parallel(1) line 78 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 79 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           If the command line contains no replacement strings then[m
+[7m Manual page parallel(1) line 80 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m{}[0m will be appended to the command line.[m
+[7m Manual page parallel(1) line 81 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 82 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Replacement strings are normally quoted, so special[m
+[7m Manual page parallel(1) line 83 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           characters are not parsed by the shell. The exception is[m
+[7m Manual page parallel(1) line 84 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           if the command starts with a replacement string; then the[m
+[7m Manual page parallel(1) line 85 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           string is not quoted.[m
+[7m Manual page parallel(1) line 86 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 87 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{.}[0m Input line without extension. This replacement string[m
+[7m Manual page parallel(1) line 88 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           will be replaced by the input with the extension removed.[m
+[7m Manual page parallel(1) line 89 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           If the input line contains [1m.[0m after the last [1m/[0m, the last [1m.[0m[m
+[7m Manual page parallel(1) line 90 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           until the end of the string will be removed and [1m{.}[0m will[m
+[7m Manual page parallel(1) line 91 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           be replaced with the remaining. E.g. [4mfoo.jpg[24m becomes [4mfoo[24m,[m
+[7m Manual page parallel(1) line 92 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [4msubdir/foo.jpg[24m becomes [4msubdir/foo[24m, [4msub.dir/foo.jpg[24m[m
+[7m Manual page parallel(1) line 93 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           becomes [4msub.dir/foo[24m, [4msub.dir/bar[24m remains [4msub.dir/bar[24m. If[m
+[7m Manual page parallel(1) line 94 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the input line does not contain [1m.[0m it will remain[m
+[7m Manual page parallel(1) line 95 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           unchanged.[m
+[7m Manual page parallel(1) line 96 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 97 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{.}[0m can be changed with [1m--er[0m.[m
+[7m Manual page parallel(1) line 98 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 99 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 100 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 101 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{/}[0m Basename of input line. This replacement string will be[m
+[7m Manual page parallel(1) line 102 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           replaced by the input with the directory part removed.[m
+[7m Manual page parallel(1) line 103 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 104 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{/}[0m can be changed with[m
+[7m Manual page parallel(1) line 105 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--basenamereplace[0m.[m
+[7m Manual page parallel(1) line 106 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 107 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 108 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 109 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{//}[0m[m
+[7m Manual page parallel(1) line 110 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Dirname of input line. This replacement string will be[m
+[7m Manual page parallel(1) line 111 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           replaced by the dir of the input line. See [1mdirname[0m(1).[m
+[7m Manual page parallel(1) line 112 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 113 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{//}[0m can be changed with[m
+[7m Manual page parallel(1) line 114 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--dirnamereplace[0m.[m
+[7m Manual page parallel(1) line 115 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 116 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 117 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 118 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{/.}[0m[m
+[7m Manual page parallel(1) line 119 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Basename of input line without extension. This[m
+[7m Manual page parallel(1) line 120 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           replacement string will be replaced by the input with the[m
+[7m Manual page parallel(1) line 121 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           directory and extension part removed. It is a combination[m
+[7m Manual page parallel(1) line 122 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           of [1m{/}[0m and [1m{.}[0m.[m
+[7m Manual page parallel(1) line 123 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 124 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{/.}[0m can be changed with[m
+[7m Manual page parallel(1) line 125 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--basenameextensionreplace[0m.[m
+[7m Manual page parallel(1) line 126 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 127 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 128 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 129 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{#}[0m Sequence number of the job to run. This replacement[m
+[7m Manual page parallel(1) line 130 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           string will be replaced by the sequence number of the job[m
+[7m Manual page parallel(1) line 131 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           being run. It contains the same number as $PARALLEL_SEQ.[m
+[7m Manual page parallel(1) line 132 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 133 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{#}[0m can be changed with[m
+[7m Manual page parallel(1) line 134 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--seqreplace[0m.[m
+[7m Manual page parallel(1) line 135 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 136 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 137 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 138 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{%}[0m Job slot number. This replacement string will be replaced[m
+[7m Manual page parallel(1) line 139 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           by the job's slot number between 1 and number of jobs to[m
+[7m Manual page parallel(1) line 140 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           run in parallel. There will never be 2 jobs running at[m
+[7m Manual page parallel(1) line 141 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the same time with the same job slot number.[m
+[7m Manual page parallel(1) line 142 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 143 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The replacement string [1m{%}[0m can be changed with[m
+[7m Manual page parallel(1) line 144 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--slotreplace[0m.[m
+[7m Manual page parallel(1) line 145 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 146 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           If the job needs to be retried (e.g using [1m--retries[0m or[m
+[7m Manual page parallel(1) line 147 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m--retry-failed[0m) the job slot is not automatically[m
+[7m Manual page parallel(1) line 148 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           updated. You should then instead use [1m$PARALLEL_JOBSLOT[0m:[m
+[7m Manual page parallel(1) line 149 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 150 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             $ do_test() {[m
+[7m Manual page parallel(1) line 151 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K                 id="$3 {%}=$1 PARALLEL_JOBSLOT=$2"[m
+[7m Manual page parallel(1) line 152 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K                 echo run "$id";[m
+[7m Manual page parallel(1) line 153 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K                 sleep 1[m
+[7m Manual page parallel(1) line 154 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K                 # fail if {%} is odd[m
+[7m Manual page parallel(1) line 155 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K                 return `echo $1%2 | bc`[m
+[7m Manual page parallel(1) line 156 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K               }[m
+[7m Manual page parallel(1) line 157 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             $ export -f do_test[m
+[7m Manual page parallel(1) line 158 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             $ parallel -j3 --jl mylog do_test {%} \$PARALLEL_JOBSLOT [m [7m Manual page parallel(1) line 159 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K{} ::: A B C D[m
+[7m Manual page parallel(1) line 160 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run A {%}=1 PARALLEL_JOBSLOT=1[m
+[7m Manual page parallel(1) line 161 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run B {%}=2 PARALLEL_JOBSLOT=2[m
+[7m Manual page parallel(1) line 162 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run C {%}=3 PARALLEL_JOBSLOT=3[m
+[7m Manual page parallel(1) line 163 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run D {%}=1 PARALLEL_JOBSLOT=1[m
+[7m Manual page parallel(1) line 164 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             $ parallel --retry-failed -j3 --jl mylog do_test {%} \$PA[m [7m Manual page parallel(1) line 165 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[KRALLEL_JOBSLOT {} ::: A B C D[m
+[7m Manual page parallel(1) line 166 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run A {%}=1 PARALLEL_JOBSLOT=1[m
+[7m Manual page parallel(1) line 167 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run C {%}=3 PARALLEL_JOBSLOT=2[m
+[7m Manual page parallel(1) line 168 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K             run D {%}=1 PARALLEL_JOBSLOT=3[m
+[7m Manual page parallel(1) line 169 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 170 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Notice how {%} and $PARALLEL_JOBSLOT differ in the retry[m
+[7m Manual page parallel(1) line 171 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           run of C and D.[m
+[7m Manual page parallel(1) line 172 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 173 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 174 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 175 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{[0m[4mn[24m[1m}[0m Argument from input source [4mn[24m or the [4mn[24m'th argument. This[m
+[7m Manual page parallel(1) line 176 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           positional replacement string will be replaced by the[m
+[7m Manual page parallel(1) line 177 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           input from input source [4mn[24m (when used with [1m-a[0m or [1m::::[0m) or[m
+[7m Manual page parallel(1) line 178 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           with the [4mn[24m'th argument (when used with [1m-N[0m). If [4mn[24m is[m
+[7m Manual page parallel(1) line 179 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           negative it refers to the [4mn[24m'th last argument.[m
+[7m Manual page parallel(1) line 180 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 181 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand replacement strings see [1m{}[0m.[m
+[7m Manual page parallel(1) line 182 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 183 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{[0m[4mn[24m.[1m}[0m[m
+[7m Manual page parallel(1) line 184 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Argument from input source [4mn[24m or the [4mn[24m'th argument without[m
+[7m Manual page parallel(1) line 185 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           extension. It is a combination of [1m{[0m[4mn[24m[1m}[0m and [1m{.}[0m.[m
+[7m Manual page parallel(1) line 186 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 187 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           This positional replacement string will be replaced by[m
+[7m Manual page parallel(1) line 188 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the input from input source [4mn[24m (when used with [1m-a[0m or [1m::::[0m)[m
+[7m Manual page parallel(1) line 189 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           or with the [4mn[24m'th argument (when used with [1m-N[0m). The input[m
+[7m Manual page parallel(1) line 190 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           will have the extension removed.[m
+[7m Manual page parallel(1) line 191 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 192 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand positional replacement strings see [1m{[0m[4mn[24m[1m}[0m.[m
+[7m Manual page parallel(1) line 193 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 194 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{[0m[4mn[24m/[1m}[0m[m
+[7m Manual page parallel(1) line 195 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Basename of argument from input source [4mn[24m or the [4mn[24m'th[m
+[7m Manual page parallel(1) line 196 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           argument.  It is a combination of [1m{[0m[4mn[24m[1m}[0m and [1m{/}[0m.[m
+[7m Manual page parallel(1) line 197 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 198 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           This positional replacement string will be replaced by[m
+[7m Manual page parallel(1) line 199 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the input from input source [4mn[24m (when used with [1m-a[0m or [1m::::[0m)[m
+[7m Manual page parallel(1) line 199 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           or with the [4mn[24m'th argument (when used with [1m-N[0m). The input[m
+[7m Manual page parallel(1) line 200 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           will have the directory (if any) removed.[m
+[7m Manual page parallel(1) line 201 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 202 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand positional replacement strings see [1m{[0m[4mn[24m[1m}[0m.[m
+[7m Manual page parallel(1) line 203 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 204 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{[0m[4mn[24m//[1m}[0m[m
+[7m Manual page parallel(1) line 204 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Dirname of argument from input source [4mn[24m or the [4mn[24m'th[m
+[7m Manual page parallel(1) line 205 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           argument.  It is a combination of [1m{[0m[4mn[24m[1m}[0m and [1m{//}[0m.[m
+[7m Manual page parallel(1) line 206 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 207 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           This positional replacement string will be replaced by[m
+[7m Manual page parallel(1) line 208 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the dir of the input from input source [4mn[24m (when used with[m
+[7m Manual page parallel(1) line 209 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m-a[0m or [1m::::[0m) or with the [4mn[24m'th argument (when used with[m
+[7m Manual page parallel(1) line 210 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m-N[0m). See [1mdirname[0m(1).[m
+[7m Manual page parallel(1) line 211 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 212 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand positional replacement strings see [1m{[0m[4mn[24m[1m}[0m.[m
+[7m Manual page parallel(1) line 213 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 214 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{[0m[4mn[24m/.[1m}[0m[m
+[7m Manual page parallel(1) line 215 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Basename of argument from input source [4mn[24m or the [4mn[24m'th[m
+[7m Manual page parallel(1) line 216 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           argument without extension.  It is a combination of [1m{[0m[4mn[24m[1m}[0m,[m
+[7m Manual page parallel(1) line 217 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           [1m{/}[0m, and [1m{.}[0m.[m
+[7m Manual page parallel(1) line 218 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 219 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           This positional replacement string will be replaced by[m
+[7m Manual page parallel(1) line 220 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the input from input source [4mn[24m (when used with [1m-a[0m or [1m::::[0m)[m
+[7m Manual page parallel(1) line 221 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           or with the [4mn[24m'th argument (when used with [1m-N[0m). The input[m
+[7m Manual page parallel(1) line 222 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           will have the directory (if any) and extension removed.[m
+[7m Manual page parallel(1) line 223 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 224 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           To understand positional replacement strings see [1m{[0m[4mn[24m[1m}[0m.[m
+[7m Manual page parallel(1) line 225 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 226 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K       [1m{=[0m[4mperl[24m [4mexpression[24m[1m=}[0m[m
+[7m Manual page parallel(1) line 227 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           Replace with calculated [4mperl[24m [4mexpression[24m. [1m$_[0m will contain[m
+[7m Manual page parallel(1) line 228 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           the same as [1m{}[0m. After evaluating [4mperl[24m [4mexpression[24m [1m$_[0m will[m
+[7m Manual page parallel(1) line 229 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           be used as the value. It is recommended to only change $_[m
+[7m Manual page parallel(1) line 230 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           but you have full access to all of GNU [1mparallel[0m's[m
+[7m Manual page parallel(1) line 231 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           internal functions and data structures.[m
+[7m Manual page parallel(1) line 232 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 233 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           The expression must give the same result if evaluated[m
+[7m Manual page parallel(1) line 234 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           twice - otherwise the behaviour is undefined. E.g. this[m
+[7m Manual page parallel(1) line 235 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           will not work as expected:[m
+[7m Manual page parallel(1) line 236 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 237 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K               parallel echo '{= $_= ++$wrong_counter =}' ::: a b c[m
+[7m Manual page parallel(1) line 238 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 239 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           A few convenience functions and data structures have been[m
+[7m Manual page parallel(1) line 240 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K           made:[m
+[7m Manual page parallel(1) line 241 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 242 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mQ([0m[4mstring[24m[1m)[0m     shell quote a string[m
+[7m Manual page parallel(1) line 243 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 244 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mpQ([0m[4mstring[24m[1m)[0m    perl quote a string[m
+[7m Manual page parallel(1) line 245 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 246 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1muq()[0m (or [1muq[0m)  do not quote current replacement string[m
+[7m Manual page parallel(1) line 247 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 248 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mhash(val)[0m     compute B::hash(val)[m
+[7m Manual page parallel(1) line 249 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 250 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mtotal_jobs()[0m  number of jobs in total[m
+[7m Manual page parallel(1) line 251 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 252 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mslot()[0m        slot number of job[m
+[7m Manual page parallel(1) line 253 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 254 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1mseq()[0m         sequence number of job[m
+[7m Manual page parallel(1) line 255 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 256 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K            [1m@arg[0m          the arguments[m
+[7m Manual page parallel(1) line 257 (press h for help or q to quit)[27m[KOB[K [KESCESC[KOO[KBB[K[m
+[7m Manual page parallel(1) line 258 (press h for help or q to quit)[27m[Kq[K[?1l>[?1049l[23;0;0t[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nncc  --pp2200--2266[K55  119922..116688..11..00
+[?2004lusage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]
+	  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]
+	  [destination] [port]
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -p20-25 192.168.1.0[D[D[D[D[D[D[D[D[D[D[D[D[C[C\\192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[1P192.168.1.0[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C  2200--2244
+[?2004l^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc 192.168.1.0 20-24  --zz[K[K[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D-[1@-[1P [C[1@ -[1@-v[1@vz[1@z
+[?2004l^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz 192.168.1.0 20-24 [D[D[D[D[D[D[D[D[D[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P3[1@30[1@0.[1@.2[1@25[1@53[1@3.[1@.1[1@19[1@91[1@1.[1@.4[1@46[1@6
+[?2004lnc: connect to 130.253.191.46 port 20 (tcp) failed: Connection refused
+nc: connect to 130.253.191.46 port 21 (tcp) failed: Connection refused
+Connection to 130.253.191.46 22 port [tcp/ssh] succeeded!
+nc: connect to 130.253.191.46 port 23 (tcp) failed: Connection refused
+nc: connect to 130.253.191.46 port 24 (tcp) failed: Connection refused
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz 130.253.191.46 20-24 [D[D[D[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P8[1@8.[1@.8[1@8.[1@.8[1@8.[1@.8[1@8
+[?2004l^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [H[2J]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ wwhhiicchh  nncc
+[?2004l/usr/bin/nc
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ppaarraalllleell  ----vveerrssiioonn
+[?2004lGNU parallel 20210822
+Copyright (C) 2007-2021 Ole Tange, http://ole.tange.dk and Free Software
+Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+GNU parallel comes with no warranty.
+
+Web site: https://www.gnu.org/software/parallel
+
+When using programs that use GNU Parallel to process data for publication
+please cite as described in the manpage.
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nncc  ----vveerrssiioonn
+[?2004lnc: invalid option -- '-'
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]
+	  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]
+	  [destination] [port]
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc --version[B[C[C[C[C[C[C[K[Anc --version[A[C[C[C[C[C[C[6@parallel[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[10Pwhich nc[A[C[C[C[C[C[Cnc -vz 8.8.8.8 20-24 [A[7@130.253.191.46[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[3P92.168.1.0[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[5P192.168.1.0 20-24[A[C[C[C[C[C[C[C[C[C-p20-25 192.168.1.0[A[C[C[C[C[C[C[10Pman parallel[A[C[C[C[C[C[Cnano parallel_nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..254[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m (B[0;1m[33m"192.168.1.$i"[7d(B[0m[32mdone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOB[?25l[?12l[?25h[7dOA[?25l[?12l[?25h[AOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[C[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;14H192.168.1.(B[0;1m[31m$i[39m(B[m"[K[6;14H$[?25l[?12l[?25h(B[0;1m[31m$1[39m(B[m92.168.1.(B[0;1m[31m$i[39m(B[m"[6;15H([?25l[?12l[?25h[32m$([39m(B[m192.168.1.(B[0;1m[31m$i[39m(B[m"[6;16Hn[?25l[?12l[?25hn192.168.1.(B[0;1m[31m$i[39m(B[m"[6;17Hc[?25l[?12l[?25hc192.168.1.(B[0;1m[31m$i[39m(B[m"[6;18H [?25l[?12l[?25h 192.168.1.(B[0;1m[31m$i[39m(B[m"[6;19HOC[?25l[40d[K[?12l[?25h[6;20HOC[?25l[?12l[?25h9OC[?25l[?12l[?25h2OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h6OC[?25l[?12l[?25h8OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h.OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h"[?25l[?12l[?25h [?25l[?12l[?25h[32m$[39m(B[m[K[?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h [?25l[?12l[?25h[42m [49m(B[m[K[?25l[?12l[?25h  [?25l[?12l[?25h[42m [49m(B[m-[?25l[?12l[?25h -v[?25l[?12l[?25h(B[0;1m[35m -v[39m(B[mz[?25l[?12l[?25h -vz [?25l[?12l[?25h[42m [49m(B[m1[?25l[?12l[?25h 19[?25l[?12l[?25h92[?25l[?12l[?25h2.[?25l[?12l[?25h.1[?25l[?12l[?25h16[?25l[?12l[?25h68[?25l[?12l[?25h8.[?25l[?12l[?25h.1[?25l[?12l[?25h1.[?25l[?12l[?25h.$[?25l[?12l[?25h[32m$[39m(B[mi[?25l[?12l[?25h(B[0;1m[31m$i[39m(B[m)[?25l[?12l[?25h[32m)[39m(B[mOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hp[?25l[?12l[?25hpecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;10H[39m(B[ma[?25l[?12l[?25haecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;11H[39m(B[mr[?25l[?12l[?25hrecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;12H[39m(B[mr[?25l[?12l[?25hrrecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;13H[39m(B[m[?25l[?12l[?25h[1Pra[?25l[?12l[?25haecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;13H[39m(B[m [?25l[?12l[?25h (B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;14H[39m(B[m[?25l[?12l[?25hecho[1Pl[?25l[?12l[?25hlecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;14H[39m(B[ml[?25l[?12l[?25hllecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;15H[39m(B[me[?25l[?12l[?25heecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;16H[39m(B[m [?25l[?12l[?25h (B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;17H[39m(B[ml[?25l[?12l[?25hlecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;18H[39m(B[m[?25l[?12l[?25h(B[0;1m[34mecho[39m(B[m[1P[?25l[?12l[?25hecho[1P[?25l[?12l[?25h[1Pe[?25l[?12l[?25heecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;16H[39m(B[ml[?25l[?12l[?25hlecho [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;17H[39m(B[m [?25l[?12l[?25h (B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;18H[39m(B[m[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;18H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nncc  [K[K[Knncc  --hh
+[?2004lOpenBSD netcat (Debian patchlevel 1.218-4ubuntu1)
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]
+	  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]
+	  [destination] [port]
+	Command Summary:
+		-4		Use IPv4
+		-6		Use IPv6
+		-b		Allow broadcast
+		-C		Send CRLF as line-ending
+		-D		Enable the debug socket option
+		-d		Detach from stdin
+		-F		Pass socket fd
+		-h		This help text
+		-I length	TCP receive buffer length
+		-i interval	Delay interval for lines sent, ports scanned
+		-k		Keep inbound sockets open for multiple connects
+		-l		Listen mode, for inbound connects
+		-M ttl		Outgoing TTL / Hop Limit
+		-m minttl	Minimum incoming TTL / Hop Limit
+		-N		Shutdown the network socket after EOF on stdin
+		-n		Suppress name/port resolutions
+		-O length	TCP send buffer length
+		-P proxyuser	Username for proxy authentication
+		-p port		Specify local port for remote connects
+		-q secs		quit after EOF on stdin and delay of secs
+		-r		Randomize remote ports
+		-S		Enable the TCP MD5 signature option
+		-s sourceaddr	Local source address
+		-T keyword	TOS value
+		-t		Answer TELNET negotiation
+		-U		Use UNIX domain socket
+		-u		UDP mode
+		-V rtable	Specify alternate routing table
+		-v		Verbose
+		-W recvlimit	Terminate after receiving a number of packets
+		-w timeout	Timeout for connects and final net reads
+		-X proto	Proxy protocol: "4", "5" (SOCKS) or "connect"
+		-x addr[:port]	Specify proxy address and port
+		-Z		DCCP mode
+		-z		Zero-I/O mode [used for scanning]
+	Port numbers can be individual or ranges: lo-hi [inclusive]
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nncc  --vvxx[Kzz  119922[K[K[K116688..[K[K[K9922..116688..11..00  --pp2200
+[?2004lusage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s sourceaddr] [-T keyword] [-V rtable] [-W recvlimit]
+	  [-w timeout] [-X proxy_protocol] [-x proxy_address[:port]]
+	  [destination] [port]
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz 192.168.1.0 -p20[D[D[1P20[1P20
+[?2004l^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz 192.168.1.0 20  --qq  22
+[?2004lddff
+^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz 192.168.1.0 20 -q 2[K[K[K[K&&
+[?2004l[1] 99048
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ppss
+[?2004l    PID TTY          TIME CMD
+  96750 pts/3    00:00:00 bash
+  99048 pts/3    00:00:00 nc
+  99053 pts/3    00:00:00 ps
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ $$$$
+[?2004l96750: command not found
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ $$&&
+[?2004l[2] 99104
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ $: command not found
+
+[?2004l[2]+  Exit 127                $
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ppss
+[?2004l    PID TTY          TIME CMD
+  96750 pts/3    00:00:00 bash
+  99048 pts/3    00:00:00 nc
+  99124 pts/3    00:00:00 ps
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ bbgg\\[K
+[?2004lbash: bg: job 1 already in background
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ffgg
+[?2004lnc -vz 192.168.1.0 20
+^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Afg[Abg[Aps[A$&[A$[B&[A$[B&[Bps[Bbg[Bfg[B[K[B[Bnnvv  --vvzz  --ww  11  119922..116688..11..11[K00  2200
+[?2004lnv: command not found
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anv -vz -w 1 192.168.1.0 20[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[1Pc[1@c
+[?2004lnc: connect to 192.168.1.0 port 20 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vz -w 1 192.168.1.0 20[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[1P[1P[1Pw[1@w
+[?2004lnc: connect to 192.168.1.0 port 20 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -vzw 1 192.168.1.0 20--2244
+[?2004lnc: connect to 192.168.1.0 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.0 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.0 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.0 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.0 port 24 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nnaannoo  ppaarrrraa	[K[Kaa	llel__	nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..254[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H[39m(B[mparallel (B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vz 192.168.1.(B[0;1m[31m$i(B[0m[32m)[7ddone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOB[?25l[?12l[?25h[7dOC[?25l[?12l[?25h[COA[?25l[?12l[?25h[AOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25hpOC[?25l[?12l[?25haOC[?25l[?12l[?25hrOC[?25l[?12l[?25haOC[?25l[?12l[?25hlOC[?25l[?12l[?25hlOC[?25l[?12l[?25heOC[?25l[?12l[?25hlOC[?25l[?12l[?25h [?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;17Hecho[1P[?25l[?12l[?25h[1P[?25l[40d[K[?12l[?25h[6;15H[1P[?25l[?12l[?25h[1Pl[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h[1P[?25l[?12l[?25h(B[0;1m[34mecho[39m(B[m[1POC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25hnOC[?25l[?12l[?25hcOC[?25l[?12l[?25h OC[?25l[?12l[?25h-OC[?25l[?12l[?25hvOC[?25l[?12l[?25hzOC[?25l[?12l[?25h OC[?25l[?12l[?25h1OC[?25l[?12l[?25h9OC[?25l[?12l[?25h2OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hw[?25l[?12l[?25hw 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;23H[39m(B[m1[?25l[?12l[?25h1 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;24H[39m(B[mOC[?25l[?12l[?25h OD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOC[?25l[?12l[?25hw [?25l[?12l[?25h 1 192.168.1.(B[0;1m[31m$i(B[0m[32m)[6;24H[39m(B[mOC[?25l[?12l[?25h1OC[?25l[?12l[?25h OA[?25l[?12l[?25h[AOA[?25l[?12l[?25h[AOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25h[?25l[?12l[?25h[32m};[39m(B[m [32mdo[39m(B[m[K[16G[?25l[?12l[?25h[32m};[39m(B[m [32mdo[39m(B[m[K[15G[?25l[?12l[?25h[32m};[39m(B[m [32mdo[39m(B[m[K[14G3[?25l[?12l[?25h3[32m};[39m(B[m [32mdo[15G[39m(B[m[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[4;15H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [B[C[C[C[C[C[C[K..//ppaarraall	lel__	nc_scan.sh 
+[?2004lnc: missing port number
+
+nc: missing port number
+
+nc: missing port number
+
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh [A[C[C[C[C[C[C[3@nano [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vzw 1 192.168.1.(B[0;1m[31m$i(B[0m[32m)[7ddone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25hnOC[?25l[?12l[?25hcOC[?25l[?12l[?25h OC[?25l[?12l[?25h-OC[?25l[?12l[?25hvOC[?25l[?12l[?25hzOC[?25l[?12l[?25hwOC[?25l[40d[K[?12l[?25h[6;24HOC[?25l[?12l[?25h1OC[?25l[?12l[?25h OC[?25l[?12l[?25h1OC[?25l[?12l[?25h9OC[?25l[?12l[?25h2OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h6OC[?25l[?12l[?25h8OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h.OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[C [?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;38H [32m)[39m(B[m2[?25l[?12l[?25h2[32m)[39m(B[m0[?25l[?12l[?25h0[32m)[39m(B[m-[?25l[?12l[?25h-[32m)[39m(B[m2[?25l[?12l[?25h2[32m)[39m(B[m4[?25l[?12l[?25h4[32m)[39m(B[m[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;44H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [A[C[C[C[C[C[C[3P./[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lnc: connect to 192.168.1.1 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 24 (tcp) timed out: Operation now in progress
+
+nc: connect to 192.168.1.2 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 24 (tcp) timed out: Operation now in progress
+
+nc: connect to 192.168.1.3 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 24 (tcp) timed out: Operation now in progress
+
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh [A[C[C[C[C[C[C[3@nano [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[32m)[7ddone[2d[39m(B[m[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOB[?25l[?12l[?25h[7dOB[?25l[?12l[?25h[8dOC[?25l[?12l[?25hOA[?25l[?12l[?25h[AOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[8dOC[?25l[?12l[?25hOD[?25l[?12l[?25h[7;5H [?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[7;5H[42m [49m(B[m|[?25l[?12l[?25h [32m|[39m(B[m [?25l[?12l[?25h[42m [49m(B[mp[?25l[?12l[?25h pa[?25l[40d[K[?12l[?25h[7;9Har[?25l[?12l[?25hra[?25l[?12l[?25hal[?25l[?12l[?25hll[?25l[?12l[?25hle[?25l[?12l[?25hel[?25l[?12l[?25hl [?25l[?12l[?25h[42m [49m(B[m-[?25l[?12l[?25h -j[?25l[?12l[?25h(B[0;1m[35m -j[39m(B[m [?25l[?12l[?25h[42m [49m(B[m3[?25l[?12l[?25h 32[?25l[?12l[?25h2[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[7;22H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [A[C[C[C[C[C[C[3P./[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lnc: connect to 192.168.1.1 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 24 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 24 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 24 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh [A[C[C[C[C[C[C[3@nano [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[32m)[7ddone[39m(B[m [32m|[39m(B[m parallel(B[0;1m[35m -j[39m(B[m 32[2d[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOB[?25l[?12l[?25h[7dOB[?25l[?12l[?25h[8dOC[?25l[?12l[?25hOA[?25l[?12l[?25h[AOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25hpOC[?25l[?12l[?25haOC[?25l[?12l[?25hrOC[?25l[?12l[?25haOC[?25l[40d[K[?12l[?25h[7;13HOC[?25l[?12l[?25hlOC[?25l[?12l[?25heOC[?25l[?12l[?25hlOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h3OC[?25l[?12l[?25h2[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[7;21H [?25l[?12l[?25h[42m [49m(B[m[K[?25l[?12l[?25h [?25l[?12l[?25h -[K[?25l[?12l[?25h[42m [49m(B[m[K[?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[7;17H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [A[C[C[C[C[C[C[3P./[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004lnc: connect to 192.168.1.1 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 24 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 20 (tcp) timed out: Operation now in progress
+^C[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [A./parallel_nc_scan.sh [A[C[C[C[C[C[C[3@nano [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[32m)[7ddone[39m(B[m [32m|[39m(B[m parallel[42m [2d[49m(B[m[?12l[?25h[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ppcc[Kvv[K[Kssuuddoo  aaoo[Kpptt  iinnssttaallll  ppvv
+[?2004l[sudo] password for ghost: [Alady!3432!
+Sorry, try again.
+[sudo] password for ghost: Lady!3432!
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree... Done
+Reading state information... 0% Reading state information... 0%Reading state information... Done
+Suggested packages:
+  doc-base
+The following NEW packages will be installed:
+  pv
+0 upgraded, 1 newly installed, 0 to remove and 3 not upgraded.
+Need to get 44.5 kB of archives.
+After this operation, 139 kB of additional disk space will be used.
+[33m0% [Working][0m            Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 pv amd64 1.6.6-1build2 [44.5 kB]
+[33m24% [1 pv 13.4 kB/44.5 kB 30%][0m[33m                              100% [Working][0m              Fetched 44.5 kB in 0s (142 kB/s)
+
+7[0;41r8[1ASelecting previously unselected package pv.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 117651 files and directories currently installed.)
+Preparing to unpack .../pv_1.6.6-1build2_amd64.deb ...
+7[42;0f[42m[30mProgress: [  0%][49m[39m [................................................] 87[42;0f[42m[30mProgress: [ 20%][49m[39m [#########.......................................] 8Unpacking pv (1.6.6-1build2) ...
+7[42;0f[42m[30mProgress: [ 40%][49m[39m [###################.............................] 8Setting up pv (1.6.6-1build2) ...
+7[42;0f[42m[30mProgress: [ 60%][49m[39m [############################....................] 87[42;0f[42m[30mProgress: [ 80%][49m[39m [######################################..........] 8Processing triggers for man-db (2.10.2-1) ...
+
+7[0;42r8[1A[J[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ cclleeaarr
+[?2004l[H[2J[3J[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nnaannoo  __[Kppaarraalllleell
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;30H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 6.2                   parallel                             [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[?12l[?25h[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel__	nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m [32m$([39m(B[mnc -vzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[32m)[7ddone[39m(B[m [32m|[39m(B[m parallel[42m [2d[49m(B[m[?12l[?25hOA[?25l[?12l[?25hOD[?25l[?12l[?25hOD[?25l[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[C[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;14H(B[0;1m[31m$nc[39m(B[m[1P[?25l[?12l[?25hnc[1POC[?25l[?12l[?25hnOC[?25l[?12l[?25hcOC[?25l[40d[K[?12l[?25h[6;17HOC[?25l[?12l[?25h-OC[?25l[?12l[?25hvOC[?25l[?12l[?25hzOC[?25l[?12l[?25hwOC[?25l[?12l[?25h OC[?25l[?12l[?25h1OC[?25l[?12l[?25h OC[?25l[?12l[?25h1OC[?25l[?12l[?25h9OC[?25l[?12l[?25h2OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h6OC[?25l[?12l[?25h8OC[?25l[?12l[?25h.OC[?25l[?12l[?25h1OC[?25l[?12l[?25h.OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25h2OC[?25l[?12l[?25h0OC[?25l[?12l[?25h-OC[?25l[?12l[?25h2OC[?25l[?12l[?25h4OC[?25l[?12l[?25h[COC[?25l[?12l[?25h[7dOD[?25l[?12l[?25h[6;43H[?25l[?12l[?25h [?25l[40;29H(B[0;7m[ Writing... ](B[m[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;42H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anano parallel_nc_scan.sh [A[K[B_nc_scan.sh [B[C[C[C[C[C[C[K[Anano parallel_nc_scan.sh 
+[?2004l[?2004h[?1049h[22;0;0t[1;42r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[40;29H(B[0;7m[ Reading... ](B[m[40;28H(B[0;7m[ Read 6 lines ](B[m[H(B[0;7m  GNU nano 6.2              parallel_nc_scan.sh                       [1;69H(B[m[41d(B[0;7m^G(B[m Help[15G(B[0;7m^O(B[m Write Out  (B[0;7m^W(B[m Where Is   (B[0;7m^K(B[m Cut[41;57H(B[0;7m^T(B[m Execute[42d(B[0;7m^X(B[m Exit[15G(B[0;7m^R(B[m Read File  (B[0;7m^\(B[m Replace    (B[0;7m^U(B[m Paste[57G(B[0;7m^J(B[m Justify[2d[36m#!/bin/bash[4d[32mfor[39m(B[m i [32min[39m(B[m [32m{[39m(B[m1..3[32m};[39m(B[m [32mdo[5;8H[36m[1K #parallel nc -p20-25 192.186.1.$1 ;[6;9H(B[0;1m[34mecho[39m(B[m nc -vzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[7d[32mdone[39m(B[m [32m|[39m(B[m parallel[42m [2d[49m(B[m[?12l[?25hOA[?25l[?12l[?25hOB[?25l[?12l[?25h[3dOB[?25l[?12l[?25h[4dOB[?25l[?12l[?25h[5dOB[?25l[?12l[?25h[6dOC[?25l[?12l[?25h[6;9HOC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h[COC[?25l[?12l[?25h OC[?25l[?12l[?25hnOC[?25l[?12l[?25hcOC[?25l[?12l[?25h OC[?25l[?12l[?25h-n[?25l[1;49H(B[0;7m*[69G(B[m[?12l[?25h[6;18Hnvzw 1 192.168.1.(B[0;1m[31m$i[39m(B[m 20-24[6;19H[?25l[40;28H (B[0;7m[ Writing... ](B[m[K[1;49H(B[0;7m [69G(B[m[40;27H(B[0;7m[ Wrote 6 lines ](B[m[?12l[?25h[6;19H[?25l[40d[J[42d[?12l[?25h[42;1H[?1049l[23;0;0t[?1l>[?2004l[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ ..//ppaarraallll	el__nn	c_scan.sh 
+[?2004lnc: connect to 192.168.1.1 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.1 port 24 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.2 port 24 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 20 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 21 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 22 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 23 (tcp) timed out: Operation now in progress
+nc: connect to 192.168.1.3 port 24 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ nncc  119922..116688..22[K11..33  2200[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D [C[1@ -[1@-v[1@vx[1@x[1Pz[1@z[D[Dn[1@n
+[?2004l^C
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ [Anc -nvz 192.168.1.3 20[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dw[1@w1[1@1[1P [C[1@ 1[1@1
+[?2004lnc: connect to 192.168.1.3 port 20 (tcp) timed out: Operation now in progress
+[?2004h]0;ghost@Lightining: ~/Desktop/shell_scripting_systems_2024_khair/system_stuff[01;32mghost@Lightining[00m:[01;34m~/Desktop/shell_scripting_systems_2024_khair/system_stuff[00m$ sscc[K[K[?2004l
+exit
+
+Script done on 2024-08-15 21:06:07-06:00 [COMMAND_EXIT_CODE="1"]

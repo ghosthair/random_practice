@@ -1,0 +1,20 @@
+2023-07-08 22:01:55.436055194  Server listening on 0.0.0.0 port 2222.
+2023-07-08 22:01:55.437943187  Server listening on :: port 2222.
+2023-07-08 22:01:56.429344401  kex_exchange_identification: Connection closed by remote host
+2023-07-08 22:01:56.429360621  Connection closed by 127.0.0.1 port 50322
+2023-07-08 22:02:48.229339255  kex_exchange_identification: Connection closed by remote host
+2023-07-08 22:02:48.229349809  Connection closed by 103.176.165.153 port 59692
+2023-07-08 22:02:49.420345957  Invalid user support from 103.176.165.153 port 60223
+2023-07-08 22:02:49.841539952  Received disconnect from 103.176.165.153 port 60223:3: com.jcraft.jsch.JSchException: Auth fail [preauth]
+2023-07-08 22:02:49.841549913  Disconnected from invalid user support 103.176.165.153 port 60223 [preauth]
+2023-07-08 22:03:24.545080125  kex_exchange_identification: Connection closed by remote host
+2023-07-08 22:03:24.545082812  Connection closed by 103.176.168.126 port 56371
+2023-07-08 22:03:25.719280293  Invalid user support from 103.176.168.126 port 58236
+2023-07-08 22:03:26.158979356  Received disconnect from 103.176.168.126 port 58236:3: com.jcraft.jsch.JSchException: Auth fail [preauth]
+2023-07-08 22:03:26.158982074  Disconnected from invalid user support 103.176.168.126 port 58236 [preauth]
+2023-07-08 22:04:17.957871721  kex_exchange_identification: Connection closed by remote host
+2023-07-08 22:04:17.957875015  Connection closed by 94.127.215.194 port 1097
+2023-07-08 22:04:19.143258918  Invalid user sqluser from 94.127.215.194 port 1101
+2023-07-08 22:04:19.342261545  Connection closed by invalid user sqluser 94.127.215.194 port 1101 [preauth]
+2023-07-08 22:04:26.201233882  Invalid user sap_user from 94.127.215.194 port 1102
+2023-07-08 22:04:26.391757944  Connection closed by invalid user sap_user 94.127.215.194 port 1102 [preauth]

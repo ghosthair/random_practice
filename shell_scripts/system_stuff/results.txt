@@ -1,0 +1,10 @@
+The url is https://www.du.edu/, the status is 200
+The url is http://www.du.edu/, the status is 301
+The url is https://www.du.edu/, the status is 200
+The url is https://www.du.edu, the status is 200
+The url is https://www.du.edu/, the status is 200
+The url is https://www.du.edu/%EF%BF%BD%EF%BF%BD%EF%BF%BD, the status is 404
+The url is https://www.du.edu/4D, the status is 301
+The url is https://www.du.edu/4D-experience, the status is 200
+The url is https://www.du.edu/4D-experience/about-4D, the status is 200
+The url is https://www.du.edu/4D-experience/content/4d-symposium, the status is 200
