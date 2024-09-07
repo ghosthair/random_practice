@@ -1,0 +1,3 @@
+/home/ghost/david_khair-comp3356spring2024/assignment4_pw_generator/CMakeFiles/executable.dir
+/home/ghost/david_khair-comp3356spring2024/assignment4_pw_generator/CMakeFiles/edit_cache.dir
+/home/ghost/david_khair-comp3356spring2024/assignment4_pw_generator/CMakeFiles/rebuild_cache.dir

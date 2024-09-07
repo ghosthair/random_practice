@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/executable.dir/main.c.o CMakeFiles/executable.dir/pw_generator.c.o CMakeFiles/executable.dir/information_content.c.o CMakeFiles/executable.dir/alphabet.c.o -o executable  -lm 
