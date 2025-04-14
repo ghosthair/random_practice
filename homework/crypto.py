@@ -60,13 +60,17 @@ def hash_message(data, hash_method):
     is the correct hash. Just need to have a method to call between the two.
     
     '''
-    b = hash_method
-    m = hashlib.sha256()
-    h = hashlib.sha512()
+    x = hash_method.upper()
+    if x == "SHA256":
+        m = hashlib.sha256()
+    elif x == "SHA512":
+        m = hashlib.sha512()
+    else:
+        # raise CryptoException
+        print("Not a valid hash choice")
+        
     m.update(data.encode())
-    h.update(data.encode())
-    print(b)
-    return m.digest(), h.digest()
+    return m.digest()
 
 
 def hmac_message(data, hash_method, key):
@@ -105,6 +109,9 @@ def verify_hmac(data, hash_method, key, mac):
     :param key: the key supposedly used in HMAC (byte string)
     :param mac: the hash value to match against (byte string)
     :return: True if a match; otherwise False
+    
+    
+    Reading through docs use hmac.compare(a,b) instead of ==
     '''
     return
 
@@ -322,5 +329,5 @@ def print_ba(b, prefix=''):
 if __name__ == "__main__":
     # Write your test code here
 	# print(generate_random_securely(15))
-	print(hash_message("Hellow World",2))
+	print(hash_message("Hellow World","sHa256"))
     
