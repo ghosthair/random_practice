@@ -26,6 +26,9 @@ import cryptography as cy
 from cryptography.hazmat.primitives import constant_time as ct
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.asymmetric import rsa, ec
+from cryptography.hazmat.primitives import serialization
 import hashlib
 
 class CryptoException(Exception):
@@ -202,9 +205,12 @@ def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
     Swap out the key with sym_key
     Add the elif line if mac is none to just complete the encryption.
     '''
+    #Dictionaries to call the algorithim and chain mode
     alo_map = {"AES128":algorithms.AES128, "CHACHA20":algorithms.ChaCha20}
     modes_map = {"CBC":modes.CBC, "CTR":modes.CTR, "GCM":modes.GCM}
-    key = os.urandom(16) # Need to replace with sym_key
+    # key = os.urandom(16) # Need to replace with sym_key
+    #Taking the key from the input, also need to add error handling here if the key is wrong size.
+    key = sym_key
     iv = os.urandom(16)
 
     # Padding for the data to make sure it is the appropriate block size
@@ -216,15 +222,23 @@ def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
     enc_text = encryptor.update(padded_data) + encryptor.finalize()
     mac = hmac_message(data, "SHA256", mac_key)
 
-    #Trying to complete the mac portion:
+    #Calling the AES-CGM mode.
     if algo.upper() == "AES128" and chain_mode.upper() == "GCM":
         print("AES GCM mode")
-        #Checking if it is ETM mode
+        mac_mode = None
+        mac_key = None
+        aes_gcm_key = AESGCM.generate_key(128)
+        aes_gcm = AESGCM(aes_gcm_key)
+        aes_gcm_nonce = os.urandom(12)
+        aes_gcm_ct = aes_gcm.encrypt(aes_gcm_nonce, data, None)
+        mac = aes_gcm_ct[-16:]
+        final_enc = aes_gcm_ct
+    #Checking if it is ETM mode
     elif mac_mode.upper() == "ETM":
         print("ETM")
-        hmac_cipher_text = hmac_message(enc_text, "SHA256", mac_key)
-        final_enc = hmac_cipher_text
-        #Checking for Encrypt and Mac mode
+        mac = hmac_message(enc_text, "SHA256", mac_key)
+        final_enc = enc_text
+    #Checking for Encrypt and Mac mode
     elif mac_mode.upper() == "EAM":
         print("EAM")
         combined = enc_text + mac
@@ -233,6 +247,7 @@ def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
             combined = padder.update(combined) + padder.finalize()
         encryptor = cipher_text.encryptor()
         final_enc = encryptor.update(combined) + encryptor.finalize()
+    #Checking for MTE mode
     elif mac_mode.upper() == "MTE":
         print("MTE")
         mte_data = data + mac
@@ -241,11 +256,12 @@ def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
             mte_data = padder.update(mte_data) + padder.finalize()
         encryptor = cipher_text.encryptor()
         final_enc = encryptor.update(mte_data) + encryptor.finalize()
+    #Part of the error handling for this.
     else:
         final_enc = cipher_text
         print("So close try again!")
-
-    final_product = (iv, final_enc, mac_key)
+    
+    final_product = (iv, final_enc, mac)
     return final_product
 
 
@@ -268,7 +284,18 @@ def sym_decrypt(data, sym_key, iv, algo, chain_mode, mac_key=None, mac=None, mac
           For other cases, no MAC verification is done if mac_mode is None
           The function should raise a CryptoException if MAC verification is done, but is found to be invalid
     '''
-    return
+    alo_map = {"AES128":algorithms.AES128, "CHACHA20":algorithms.ChaCha20}
+    modes_map = {"CBC":modes.CBC, "CTR":modes.CTR, "GCM":modes.GCM}
+
+    cipher_text = Cipher(alo_map[algo.upper()](sym_key), modes_map[chain_mode.upper()](iv))
+    decryptor = cipher_text.decryptor()
+    padded_text = decryptor.update(data) + decryptor.finalize()
+
+    if chain_mode.upper() == "CBC":
+        unpadder = padding.PKCS7(128).unpadder()
+        plain_text = unpadder.update(padded_text) + unpadder.finalize()
+
+    return plain_text
 
 
 def gen_rsa_keypair(size):
@@ -279,8 +306,25 @@ def gen_rsa_keypair(size):
     :return: a tuple (pu, pr) - each a RSAPrivateKey instance of cryptography library
              pu: public key
              pr: private key
+
+    **** COMPLETED ****
+    
     '''
-    return
+    private_key = rsa.generate_private_key(65537, size)
+
+    pem = private_key.private_bytes(encoding=serialization.Encoding.PEM, format=serialization.PrivateFormat.TraditionalOpenSSL, encryption_algorithm=serialization.NoEncryption())
+    pem.splitlines()[0]
+
+    public_key = private_key.public_key()
+    pem_pub = public_key.public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    pem_pub.splitlines()[0]
+
+
+    key = (pem_pub, pem)
+    return key
 
 
 def gen_ec_keypair():
@@ -290,8 +334,25 @@ def gen_ec_keypair():
     :return: a tuple (pu, pr) - each an EllipticCurvePrivateKey instance of cryptography library
              pu: public key
              pr: private key
+
+    **** COMPLETED ****
+             
     '''
-    return
+    private_key = ec.generate_private_key(ec.SECP256R1())
+    pub_key = private_key.public_key()
+
+    pem_private = private_key.private_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PrivateFormat.PKCS8,
+        encryption_algorithm=serialization.NoEncryption()
+    )
+    pem_pub = pub_key.public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    keys = (pem_pub, pem_private)
+
+    return keys
 
 
 def save_public_key(public_key, file):
@@ -300,8 +361,15 @@ def save_public_key(public_key, file):
 
     :param public_key: the public key (RSAPublicKey or EllipticCurvePublicKey)
     :param file: output file name (use .pem extension) (string)
+    
+    COMPLETED
+    
     '''
-    return
+
+    pub_key = public_key[0]
+    with open(file, "wb") as f:
+        f.write(pub_key)
+    return pub_key
 
 
 def save_private_key(private_key, file, password=None):
@@ -311,7 +379,14 @@ def save_private_key(private_key, file, password=None):
     :param private_key: the private key (RSAPrivateKey or EllipticCurvePrivateKey)
     :param password: optional password to encrypt saved file (byte string)
     :param file: output file name (use .pem extension) (string)
+    
+    **** NOT COMPLETED ****
+    
     '''
+    pri_key = private_key[1]
+    with open(file, "wb") as f:
+        f.write(pri_key)
+
     return
 
 
@@ -444,4 +519,9 @@ if __name__ == "__main__":
     # print("This is hmac message\n", hmac_message(b"Hello World", "SHA256", b"SuperSecret"))
     # print("This is verify hash: True or False.\n", verify_hash(b"Hello World", "sha256", b"Hello World"))
     # print("This is verify hmac\n", verify_hmac(b"Hello World", "sha256", b"SuperSecret", b"Hello World"))
-    print(sym_encrypt(b"Hello World", b"secretkey", "AES128", "CBC", b"MACKEY!", "ETM"))
+    # print(sym_encrypt(b"Hello World", b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', "AES128", "CBC", b"MACKEY!", "ETM"))
+    # print(sym_decrypt(b'\xe9\x97\x18\xad\xbfJO\xa3\xf9\xb6;\x16\xa5MP\xf8', b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', b'\xd2\xd9Yf\xabF\xbb%[y\xca\xd6/\xcf_ ', "AES128", "CBC", b"MACKEY!", b'\x91\x18\xf4\xba\xcfc\xc7*\x0e\xf2\xa4\xd2\xd2_{\xecH@\xa7\x87\xd4)\xc6\xe9{\xb2\xe5O\x10\xe9lU', "ETM"))
+    # print(gen_rsa_keypair(2048))
+    # print(gen_ec_keypair())
+    print(save_public_key(gen_rsa_keypair(2048), "public_key.pem"))
+    # pass
