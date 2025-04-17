@@ -27,8 +27,9 @@ from cryptography.hazmat.primitives import constant_time as ct
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from cryptography.hazmat.primitives.asymmetric import rsa, ec
-from cryptography.hazmat.primitives import serialization
+from cryptography.hazmat.primitives.asymmetric import rsa, ec, padding
+from cryptography.hazmat.primitives import serialization, hashes
+from cryptography.exceptions import InvalidSignature
 import hashlib
 
 class CryptoException(Exception):
@@ -308,22 +309,12 @@ def gen_rsa_keypair(size):
              pr: private key
 
     **** COMPLETED ****
-    
+
     '''
     private_key = rsa.generate_private_key(65537, size)
-
-    pem = private_key.private_bytes(encoding=serialization.Encoding.PEM, format=serialization.PrivateFormat.TraditionalOpenSSL, encryption_algorithm=serialization.NoEncryption())
-    pem.splitlines()[0]
-
     public_key = private_key.public_key()
-    pem_pub = public_key.public_bytes(
-        encoding=serialization.Encoding.PEM,
-        format=serialization.PublicFormat.SubjectPublicKeyInfo
-    )
-    pem_pub.splitlines()[0]
 
-
-    key = (pem_pub, pem)
+    key = (public_key, private_key)
     return key
 
 
@@ -340,17 +331,7 @@ def gen_ec_keypair():
     '''
     private_key = ec.generate_private_key(ec.SECP256R1())
     pub_key = private_key.public_key()
-
-    pem_private = private_key.private_bytes(
-        encoding=serialization.Encoding.PEM,
-        format=serialization.PrivateFormat.PKCS8,
-        encryption_algorithm=serialization.NoEncryption()
-    )
-    pem_pub = pub_key.public_bytes(
-        encoding=serialization.Encoding.PEM,
-        format=serialization.PublicFormat.SubjectPublicKeyInfo
-    )
-    keys = (pem_pub, pem_private)
+    keys = (pub_key, private_key)
 
     return keys
 
@@ -365,11 +346,14 @@ def save_public_key(public_key, file):
     COMPLETED
     
     '''
-
-    pub_key = public_key[0]
+    pem_pub = public_key.public_bytes(
+        encoding=serialization.Encoding.PEM,
+        format=serialization.PublicFormat.SubjectPublicKeyInfo
+    )
+    pem_pub.splitlines()[0]
     with open(file, "wb") as f:
-        f.write(pub_key)
-    return pub_key
+        f.write(pem_pub)
+    return pem_pub
 
 
 def save_private_key(private_key, file, password=None):
@@ -380,14 +364,25 @@ def save_private_key(private_key, file, password=None):
     :param password: optional password to encrypt saved file (byte string)
     :param file: output file name (use .pem extension) (string)
     
-    **** NOT COMPLETED ****
+    **** COMPLETED ****
     
     '''
-    pri_key = private_key[1]
+    pw = password
+    if pw is not None:
+        pem = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM, 
+            format=serialization.PrivateFormat.TraditionalOpenSSL, 
+            encryption_algorithm=serialization.BestAvailableEncryption(pw))
+        pem.splitlines()[0]
+    else:
+        pem = private_key.private_bytes(
+            encoding=serialization.Encoding.PEM, 
+            format=serialization.PrivateFormat.TraditionalOpenSSL, 
+            encryption_algorithm=serialization.NoEncryption())
+        pem.splitlines()[0]
     with open(file, "wb") as f:
-        f.write(pri_key)
-
-    return
+        f.write(pem)
+    return pem
 
 
 def load_public_key(file):
@@ -396,8 +391,15 @@ def load_public_key(file):
 
     :param file: input file name (string)
     :return: the public key (RSAPublicKey or EllipticCurvePublicKey)
+    
+    **** COMPLETED ****
+    
     '''
-    return
+    with open(file, "rb") as f:
+        pem_pub = f.read()
+    pub_key = serialization.load_pem_public_key(pem_pub)
+    print(pub_key)
+    return pub_key
 
 
 def load_private_key(file, password=None):
@@ -407,7 +409,14 @@ def load_private_key(file, password=None):
     :param file: input file name (string)
     :param password: optional password to decrypt input file, if it was saved with encryption (byte string)
     :return: the private key (RSAPrivateKey or EllipticCurvePrivateKey)
+    
+    **** COMPLETED ****
+    
     '''
+    with open(file, "rb") as f:
+        pem_pri = f.read()
+    pri_key = serialization.load_pem_private_key(pem_pri, password)
+    print(pri_key)
     return
 
 
@@ -421,7 +430,15 @@ def rsa_encrypt(data, public_key):
 
     Note: The amount of data you can encrypt will be limited. Experiment!
     '''
-    return
+    ciphertext = public_key.encrypt(
+        data,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+    return ciphertext
 
 
 def rsa_decrypt(data, private_key):
@@ -432,7 +449,15 @@ def rsa_decrypt(data, private_key):
     :param private_key: private key to use (RSAPrivateKey)
     :return: plaintext (byte string)
     '''
-    return
+    plain_text = private_key.decrypt(
+        data, 
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+    return plain_text
 
 
 def rsa_envelope_encrypt(data, public_key):
@@ -450,7 +475,24 @@ def rsa_envelope_encrypt(data, public_key):
     Note: Although not necessary here, key_ct can be provided as "additional authentication data" to
           GCM so that we can have integrity protection on key_ct as well
     '''
-    return
+    key = os.urandom(16)
+    aesgcm = AESGCM(key)
+    nonce = os.urandom(12)
+    ciphertext_and_mac = aesgcm.encrypt(nonce, data, None)
+
+    ciphertext = ciphertext_and_mac[:-16]
+    mac = ciphertext_and_mac[-16:]
+
+    key_ct = public_key.encrypt(
+        key,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+
+    return key_ct, nonce, ciphertext, mac
 
 
 def rsa_envelope_decrypt(data, key_data, iv, mac, private_key):
@@ -466,7 +508,22 @@ def rsa_envelope_decrypt(data, key_data, iv, mac, private_key):
 
     Note: The function should raise a CryptoException if the MAC is invalid
     '''
-    return
+    try:
+        aes_key = private_key.decrypt(
+            key_data, # I think this is the syemtical key
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
+        )
+        cipher_and_mac = data + mac
+
+        aesgcm = AESGCM(aes_key)
+        plaintext = aesgcm.decrypt(iv, cipher_and_mac, None)
+        return plaintext
+    except Exception as e:
+        raise CryptoException("CryptoException: MAC verfications failed or decryption error.") from e
 
 
 def generate_signature(data, method, private_key):
@@ -478,7 +535,27 @@ def generate_signature(data, method, private_key):
     :param private_key: private key to use for signing (RSAPrivateKey or EllipticCurvePrivateKey)
     :return: signature (byte string)
     '''
-    return
+    method = method.upper()
+
+    if method not in ["RSA", "ECDSA"]:
+        raise CryptoException("Imporper method picked for verification, please pick RSA or ECDSA")
+
+    if method == "RSA":
+        signature = private_key.sign(
+            data,
+            padding.PSS(
+                mgf=padding.MGF1(hashes.SHA256()),
+                salt_length=padding.PSS.MAX_LENGTH
+            ),
+            hashes.SHA256()
+        )
+    elif method == "ECDSA":
+        signature = private_key.sign(
+            data,
+            ec.ECDSA(hashes.SHA256())
+        )
+
+    return signature
 
 
 def verify_signature(data, method, public_key, signature):
@@ -491,7 +568,30 @@ def verify_signature(data, method, public_key, signature):
     :param signature: the signature to verify against (byte string)
     :return: True if signature is valid; otherwise False
     '''
-    return
+    method = method.upper()
+
+    if method not in ["RSA", "ECDSA"]:
+        raise CryptoException("Imporper method picked for verification, please pick RSA or ECDSA")
+    try:
+        if method == "RSA":
+            public_key.verify(
+                signature,
+                data,
+                padding.PSS(
+                    mgf=padding.MGF1(hashes.SHA256()),
+                    salt_length=padding.PSS.MAX_LENGTH
+                ),
+                hashes.SHA256()
+            )
+        elif method == "ECDSA":
+            public_key.verify(signature, data, ec.ECDSA(hashes.SHA256()))
+        else:
+            print("No proper method picked")
+        return True
+    except InvalidSignature:
+        return False
+    except Exception as e:
+        raise CryptoException("Signature verifcation failed, not false but the process failed.")
 
 ################# END TODO
 
@@ -521,7 +621,23 @@ if __name__ == "__main__":
     # print("This is verify hmac\n", verify_hmac(b"Hello World", "sha256", b"SuperSecret", b"Hello World"))
     # print(sym_encrypt(b"Hello World", b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', "AES128", "CBC", b"MACKEY!", "ETM"))
     # print(sym_decrypt(b'\xe9\x97\x18\xad\xbfJO\xa3\xf9\xb6;\x16\xa5MP\xf8', b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', b'\xd2\xd9Yf\xabF\xbb%[y\xca\xd6/\xcf_ ', "AES128", "CBC", b"MACKEY!", b'\x91\x18\xf4\xba\xcfc\xc7*\x0e\xf2\xa4\xd2\xd2_{\xecH@\xa7\x87\xd4)\xc6\xe9{\xb2\xe5O\x10\xe9lU', "ETM"))
-    # print(gen_rsa_keypair(2048))
-    # print(gen_ec_keypair())
-    print(save_public_key(gen_rsa_keypair(2048), "public_key.pem"))
-    # pass
+    rsa_key = gen_rsa_keypair(2048)
+    rsa_pub = rsa_key[0]
+    rsa_pri = rsa_key[1]
+    ec_key = gen_ec_keypair()
+    ec_pub = ec_key[0]
+    ec_pri = ec_key[1]
+    # print(ec_key)
+    # print(save_public_key(ec_key[0], "public_key.pem"))
+    # print(save_private_key(ec_key[1], "private_key.pem", b"password123"))
+    # load_public_key("public_key.pem")
+    # load_private_key("private_key.pem", b"password123")
+    # rsa_ciphertext = rsa_encrypt(b"Hello World", rsa_pub)
+    # print(rsa_decrypt(rsa_ciphertext, rsa_pri))
+    # print(rsa_envelope_encrypt(b"Hello World", rsa_pub))
+    # key_data, env_iv, cipher_text, env_mac = rsa_envelope_encrypt(b"Hello World", rsa_pub)
+    # print(f"Key Data: {key_data}\nIV{env_iv}\nCipher Text{cipher_text}\nMAC{env_mac}")
+    # print(rsa_envelope_decrypt(cipher_text, key_data, env_iv, env_mac, rsa_pri))
+    signature = generate_signature(b"Hello World", "ECDSA", ec_pri)
+    # print(signature)
+    print(verify_signature(b"Hello World", "ECDSA", ec_pub, signature))
