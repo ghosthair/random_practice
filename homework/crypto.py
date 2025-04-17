@@ -640,4 +640,4 @@ if __name__ == "__main__":
     # print(rsa_envelope_decrypt(cipher_text, key_data, env_iv, env_mac, rsa_pri))
     signature = generate_signature(b"Hello World", "ECDSA", ec_pri)
     # print(signature)
-    print(verify_signature(b"Hello World", "ECDSA", ec_pub, signature))
+    # print(verify_signature(b"Hello World", "ECDSA", ec_pub, signature))
