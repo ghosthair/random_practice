@@ -22,15 +22,15 @@ expect bytes?
 """
 import os
 import secrets as sc
-import cryptography as cy
+import hashlib
+import hmac as stdlib_hmac
 from cryptography.hazmat.primitives import constant_time as ct
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives import padding
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-from cryptography.hazmat.primitives.asymmetric import rsa, ec, padding
-from cryptography.hazmat.primitives import serialization, hashes
+from cryptography.hazmat.primitives.asymmetric import rsa, ec
+from cryptography.hazmat.primitives import serialization, hashes, padding, hmac
 from cryptography.exceptions import InvalidSignature
-import hashlib
+
 
 class CryptoException(Exception):
     '''
@@ -57,6 +57,8 @@ def generate_random_securely(size=None):
 
     **** COMPLETED ****
     '''
+    if size < 0:
+        raise CryptoException("Error with key size")
     print("Randomly Secure Function")
     x = sc.token_bytes(size)
     return x 
@@ -72,16 +74,22 @@ def hash_message(data, hash_method):
     
     **** COMPLETED ****
     '''
-    x = hash_method.upper()
-    if x == "SHA256":
-        m = hashlib.sha256()
-    elif x == "SHA512":
-        m = hashlib.sha512()
-    else:
-        # raise CryptoException
-        print("Not a valid hash choice")
-        
-    m.update(data)
+    if not isinstance(data, bytes):
+        raise CryptoException("Data must be in bytes")
+
+    try:
+        x = hash_method.upper()
+        if x == "SHA256":
+            m = hashlib.sha256()
+        elif x == "SHA512":
+            m = hashlib.sha512()
+        else:
+            # raise CryptoException
+            print("Not a valid hash choice")
+            
+        m.update(data)
+    except Exception as e:
+        raise CryptoException("Error with RSA Encrypt")
     return m.digest()
 
 
@@ -94,22 +102,20 @@ def hmac_message(data, hash_method, key):
     :param key: the key to use in HMAC (byte string)
     :return: HMAC of the data (byte string)
 
-    **** NOT COMPLETED ****
+    **** COMPLETED ****
 
     '''
-    hmac = data + key
+    if not isinstance(data, bytes):
+        raise CryptoException("Data must be in bytes")
+    # print("Available hashes:", dir(hashes))
+    try:
+        hash_alg = getattr(hashes, hash_method.upper())()
+    except AttributeError:
+        raise CryptoException("Not a valid hash choice")
+    h = hmac.HMAC(key, hash_alg)
+    h.update(data)
 
-    x = hash_method.upper()
-    if x == "SHA256":
-        m = hashlib.sha256()
-    elif x == "SHA512":
-        m = hashlib.sha512()
-    else:
-        # raise CryptoException
-        print("Not a valid hash choice")
-
-    m.update(hmac)
-    return m.digest()
+    return h.finalize()
 
 
 def verify_hash(data, hash_method, mac):
@@ -128,7 +134,8 @@ def verify_hash(data, hash_method, mac):
     Need to review with the professor or the TA, all I did was re-hash it.
 
     '''
-
+    if not isinstance(data, bytes):
+        raise CryptoException("Data must be in bytes")
     #This is just selecting the hash method, need to research method to compare.
     x = hash_method.upper()
     if x == "SHA256":
@@ -136,8 +143,7 @@ def verify_hash(data, hash_method, mac):
     elif x == "SHA512":
         m = hashlib.sha512()
     else:
-        # raise CryptoException
-        print("Not a valid hash choice")
+        raise CryptoException("Not a valid hash choice")
     x = hash_message(mac, "sha256")
 
     m.update(data)
@@ -160,26 +166,21 @@ def verify_hmac(data, hash_method, key, mac):
     
     Reading through docs use hmac.compare(a,b) instead of ==
 
-    **** NOT COMPLETED ****
-    Need to review with the professor or the TA, all I did was re-hash it.
+    **** COMPLETED ****
 
     '''
-    hmac = data + key
-    x = hash_method.upper()
-    if x == "SHA256":
-        m = hashlib.sha256()
-    elif x == "SHA512":
-        m = hashlib.sha512()
-    else:
-        # raise CryptoException
-        print("Not a valid hash choice")
+    if not isinstance(data, bytes):
+        raise CryptoException("Data must be in bytes")
+    try:
+        hash_alg = getattr(hashes, hash_method.upper())()
+    except AttributeError:
+        raise CryptoException("Not a valid hash choice")
+    
+    h = hmac.HMAC(key, hash_alg)
+    h.update(data)
+    computed_mac = h.finalize()
 
-    m.update(hmac)
-    j = m.digest()
-
-    y = hmac_message(mac, hash_method, key)
-    a = ct.bytes_eq(j,y)
-    return a
+    return stdlib_hmac.compare_digest(computed_mac, mac)
 
 
 def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
@@ -202,68 +203,73 @@ def sym_encrypt(data, sym_key, algo, chain_mode, mac_key=None, mac_mode=None):
           For other cases, no MAC is computed if mac_mode is None
 
     **** TODO ****
-    Complete the AES-GCM mode
-    Swap out the key with sym_key
+    Complete the AES-GCM mode - Done
+    Swap out the key with sym_key - Done
     Add the elif line if mac is none to just complete the encryption.
     '''
+
     #Dictionaries to call the algorithim and chain mode
     alo_map = {"AES128":algorithms.AES128, "CHACHA20":algorithms.ChaCha20}
     modes_map = {"CBC":modes.CBC, "CTR":modes.CTR, "GCM":modes.GCM}
-    # key = os.urandom(16) # Need to replace with sym_key
-    #Taking the key from the input, also need to add error handling here if the key is wrong size.
-    key = sym_key
+    
+    #Sanitizing input
+    algo = algo.upper()
+    chain_mode = chain_mode.upper()
+    mac_mode = mac_mode.upper() if mac_mode else None
+
+    if algo == "AES128" and chain_mode == "GCM":
+        print("AES GCM mode")
+        aesgcm = AESGCM(sym_key)
+        iv = os.urandom(12)
+        ct_with_tag = aesgcm.encrypt(iv, data, None)
+        return iv, ct_with_tag[:-16], ct_with_tag[-16:]
+    
+    # Set IV (16 bytes for CBC/CTR, 12 for ChaCha20 if needed)
     iv = os.urandom(16)
 
-    # Padding for the data to make sure it is the appropriate block size
-    pad = padding.PKCS7(128).padder()
-    padded_data = pad.update(data) + pad.finalize()
+    # Padding (only for CBC)
+    if chain_mode == "CBC":
+        padder = padding.PKCS7(128).padder()
+        data = padder.update(data) + padder.finalize()
 
-    cipher_text = Cipher(alo_map[algo.upper()](key), modes_map[chain_mode.upper()](iv))
-    encryptor = cipher_text.encryptor()
-    enc_text = encryptor.update(padded_data) + encryptor.finalize()
-    mac = hmac_message(data, "SHA256", mac_key)
+    cipher = Cipher(alo_map[algo](sym_key), modes_map[chain_mode](iv))
+    encryptor = cipher.encryptor()
+    enc_text = encryptor.update(data) + encryptor.finalize()
 
-    #Calling the AES-CGM mode.
-    if algo.upper() == "AES128" and chain_mode.upper() == "GCM":
-        print("AES GCM mode")
-        mac_mode = None
-        mac_key = None
-        aes_gcm_key = AESGCM.generate_key(128)
-        aes_gcm = AESGCM(aes_gcm_key)
-        aes_gcm_nonce = os.urandom(12)
-        aes_gcm_ct = aes_gcm.encrypt(aes_gcm_nonce, data, None)
-        mac = aes_gcm_ct[-16:]
-        final_enc = aes_gcm_ct
-    #Checking if it is ETM mode
-    elif mac_mode.upper() == "ETM":
+    # MAC modes
+    if mac_mode == "ETM":
         print("ETM")
         mac = hmac_message(enc_text, "SHA256", mac_key)
         final_enc = enc_text
-    #Checking for Encrypt and Mac mode
-    elif mac_mode.upper() == "EAM":
+
+    elif mac_mode == "EAM":
         print("EAM")
+        mac = hmac_message(data, "SHA256", mac_key)
         combined = enc_text + mac
-        if chain_mode.upper() in ["CBC"]:
+        if chain_mode == "CBC":
             padder = padding.PKCS7(128).padder()
             combined = padder.update(combined) + padder.finalize()
-        encryptor = cipher_text.encryptor()
+        encryptor = cipher.encryptor()
         final_enc = encryptor.update(combined) + encryptor.finalize()
-    #Checking for MTE mode
-    elif mac_mode.upper() == "MTE":
+
+    elif mac_mode == "MTE":
         print("MTE")
+        mac = hmac_message(data, "SHA256", mac_key)
         mte_data = data + mac
-        if chain_mode.upper() in ["CBC"]:
+        if chain_mode == "CBC":
             padder = padding.PKCS7(128).padder()
             mte_data = padder.update(mte_data) + padder.finalize()
-        encryptor = cipher_text.encryptor()
+        encryptor = cipher.encryptor()
         final_enc = encryptor.update(mte_data) + encryptor.finalize()
-    #Part of the error handling for this.
+
+    elif mac_mode is None:
+        mac = None
+        final_enc = enc_text
+
     else:
-        final_enc = cipher_text
-        print("So close try again!")
-    
-    final_product = (iv, final_enc, mac)
-    return final_product
+        raise CryptoException("Unsupported MAC mode: {}".format(mac_mode))
+
+    return iv, final_enc, mac
 
 
 def sym_decrypt(data, sym_key, iv, algo, chain_mode, mac_key=None, mac=None, mac_mode=None):
@@ -288,14 +294,58 @@ def sym_decrypt(data, sym_key, iv, algo, chain_mode, mac_key=None, mac=None, mac
     alo_map = {"AES128":algorithms.AES128, "CHACHA20":algorithms.ChaCha20}
     modes_map = {"CBC":modes.CBC, "CTR":modes.CTR, "GCM":modes.GCM}
 
+    #Sanitizing input
+    algo = algo.upper()
+    chain_mode = chain_mode.upper()
+    mac_mode = mac_mode.upper() if mac_mode else None
+
+    if algo == "AES128" and chain_mode == "GCM":
+        try:
+            aesgcm = AESGCM(sym_key)
+            combined = data + mac if mac else data
+            plain_text = aesgcm.decrypt(iv, combined, None)
+            return plain_text
+        except Exception:
+            raise CryptoException("MAC verfication failed with GCM function")
+
+    if algo not in alo_map or chain_mode not in modes_map:
+        raise CryptoException("Unsupported algorithim or chain mode.")
+
     cipher_text = Cipher(alo_map[algo.upper()](sym_key), modes_map[chain_mode.upper()](iv))
     decryptor = cipher_text.decryptor()
-    padded_text = decryptor.update(data) + decryptor.finalize()
 
-    if chain_mode.upper() == "CBC":
+    if mac_mode == "ETM":
+        expected_mac = hmac_message(data, "SHA256", mac_key)
+        if not ct.bytes_eq(expected_mac, mac):
+            raise CryptoException("MAC verifcation failed (ETM)")
+        padded_text = decryptor.update(data) + decryptor.finalize()
+    elif mac_mode == "EAM":
+        decrypt_out = decryptor.update(data) + decryptor.finalize()
+        if chain_mode == "CBC":
+            unpadder = padding.PKCS7(128).unpadder()
+            decrypt_out = unpadder.update(decrypt_out) + unpadder.finalize()
+        msg, mac_extracted = decrypt_out[:-32], decrypt_out[-32:]
+        expected_mac = hmac_message(msg, "SHA256", mac_key)
+        if not ct.bytes_eq(expected_mac, mac_extracted):
+            raise CryptoException("MAC verfication failed (MTE)")
+        
+        return msg
+
+    elif mac_mode is None:
+        padded_text = decryptor.update(data) + decryptor.finalize()
+
+    else:
+        # Checking to make sure the correct MAC mode is picked
+        raise CryptoException("Unsupported MAC mode: {}".format(mac_mode))
+    
+    if chain_mode == "CBC":
         unpadder = padding.PKCS7(128).unpadder()
-        plain_text = unpadder.update(padded_text) + unpadder.finalize()
-
+        try:
+            plain_text = unpadder.update(padded_text) + unpadder.finalize()
+        except Exception:
+            raise CryptoException("Padding is invalid")
+    else:
+        plain_text = padded_text
     return plain_text
 
 
@@ -311,6 +361,9 @@ def gen_rsa_keypair(size):
     **** COMPLETED ****
 
     '''
+    if len(size) < 1:
+        raise CryptoException("Invalid key size")
+
     private_key = rsa.generate_private_key(65537, size)
     public_key = private_key.public_key()
 
@@ -430,14 +483,17 @@ def rsa_encrypt(data, public_key):
 
     Note: The amount of data you can encrypt will be limited. Experiment!
     '''
-    ciphertext = public_key.encrypt(
-        data,
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None
+    try:
+        ciphertext = public_key.encrypt(
+            data,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
         )
-    )
+    except Exception as e:
+        raise CryptoException("Error with RSA Encrypt")
     return ciphertext
 
 
@@ -449,14 +505,17 @@ def rsa_decrypt(data, private_key):
     :param private_key: private key to use (RSAPrivateKey)
     :return: plaintext (byte string)
     '''
-    plain_text = private_key.decrypt(
-        data, 
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None
+    try:
+        plain_text = private_key.decrypt(
+            data, 
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
         )
-    )
+    except Exception as e:
+        raise CryptoException("Error with RSA Decrypt")
     return plain_text
 
 
@@ -483,14 +542,17 @@ def rsa_envelope_encrypt(data, public_key):
     ciphertext = ciphertext_and_mac[:-16]
     mac = ciphertext_and_mac[-16:]
 
-    key_ct = public_key.encrypt(
-        key,
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None
+    try:
+        key_ct = public_key.encrypt(
+            key,
+            padding.OAEP(
+                mgf=padding.MGF1(algorithm=hashes.SHA256()),
+                algorithm=hashes.SHA256(),
+                label=None
+            )
         )
-    )
+    except Exception as e:
+        raise CryptoException("Error with Enevelop Encryption")
 
     return key_ct, nonce, ciphertext, mac
 
@@ -616,17 +678,19 @@ if __name__ == "__main__":
     # Write your test code here
 	# print(generate_random_securely(15))
 	# print("This is the hash message\n", hash_message(b"Hellow World","sHa256"))
-    # print("This is hmac message\n", hmac_message(b"Hello World", "SHA256", b"SuperSecret"))
+    print("This is hmac message\n", hmac_message(b"Hello World", "SHA256", b"SuperSecret"))
     # print("This is verify hash: True or False.\n", verify_hash(b"Hello World", "sha256", b"Hello World"))
     # print("This is verify hmac\n", verify_hmac(b"Hello World", "sha256", b"SuperSecret", b"Hello World"))
-    # print(sym_encrypt(b"Hello World", b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', "AES128", "CBC", b"MACKEY!", "ETM"))
+    # iv, final_enc, mac = sym_encrypt(b"Hello World", b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', "AES128", "CBC", b"MACKEY!", "ETM")
+
     # print(sym_decrypt(b'\xe9\x97\x18\xad\xbfJO\xa3\xf9\xb6;\x16\xa5MP\xf8', b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', b'\xd2\xd9Yf\xabF\xbb%[y\xca\xd6/\xcf_ ', "AES128", "CBC", b"MACKEY!", b'\x91\x18\xf4\xba\xcfc\xc7*\x0e\xf2\xa4\xd2\xd2_{\xecH@\xa7\x87\xd4)\xc6\xe9{\xb2\xe5O\x10\xe9lU', "ETM"))
-    rsa_key = gen_rsa_keypair(2048)
-    rsa_pub = rsa_key[0]
-    rsa_pri = rsa_key[1]
-    ec_key = gen_ec_keypair()
-    ec_pub = ec_key[0]
-    ec_pri = ec_key[1]
+    # print(sym_decrypt(final_enc, b'\x83\xf1\x7b\xc9\x14\x2e\xba\xdf\x90\x65\x7c\xee\x19\xa3\x28\xcb', iv, "AES128", "CBC", mac, "ETM"))
+    # rsa_key = gen_rsa_keypair(2048)
+    # rsa_pub = rsa_key[0]
+    # rsa_pri = rsa_key[1]
+    # ec_key = gen_ec_keypair()
+    # ec_pub = ec_key[0]
+    # ec_pri = ec_key[1]
     # print(ec_key)
     # print(save_public_key(ec_key[0], "public_key.pem"))
     # print(save_private_key(ec_key[1], "private_key.pem", b"password123"))
@@ -638,6 +702,6 @@ if __name__ == "__main__":
     # key_data, env_iv, cipher_text, env_mac = rsa_envelope_encrypt(b"Hello World", rsa_pub)
     # print(f"Key Data: {key_data}\nIV{env_iv}\nCipher Text{cipher_text}\nMAC{env_mac}")
     # print(rsa_envelope_decrypt(cipher_text, key_data, env_iv, env_mac, rsa_pri))
-    signature = generate_signature(b"Hello World", "ECDSA", ec_pri)
+    # signature = generate_signature(b"Hello World", "ECDSA", ec_pri)
     # print(signature)
-    print(verify_signature(b"Hello World", "ECDSA", ec_pub, signature))
+    # print(verify_signature(b"Hello World", "ECDSA", ec_pub, signature))
