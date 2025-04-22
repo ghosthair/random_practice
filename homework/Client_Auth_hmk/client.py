@@ -42,7 +42,10 @@ if __name__ == '__main__':
 
     # TODO: Implement client side of authentication protocol and store established 
     #       session key in the session_key variable as a byte string
-    session_key = None
+    session = os.urandom(32)
+    time_stmp = str(time.time()).encode()
+    padded_timestamp = time_stmp.ljust(32, b'\x00')
+    session_key = session + padded_timestamp
     iv = os.urandom(16)
     aes_key = os.urandom(32)
     
@@ -58,7 +61,6 @@ if __name__ == '__main__':
 
         Data will probably be session key, this is the infor that really important
     '''
-
     #Encrypting using AESCBS Mode
     cipher = Cipher(algorithms.AES(aes_key), modes.CBC)
     encryptor = cipher.encryptor()
