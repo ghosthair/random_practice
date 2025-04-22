@@ -36,7 +36,10 @@ def handle_client(client_socket, client_ip, client_port):
     #       session key in the session_key variable as a byte string
     session_key = None
     
-    
+
+    # TODO: End of the todo block
+    # --------------------------------------------------------------#
+    #
     
     
     # Print session key

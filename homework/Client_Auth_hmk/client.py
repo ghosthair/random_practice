@@ -7,8 +7,6 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes
 
-
-
 print_lock = threading.Lock()  # mutex lock for display access
 
 def print_msg(msg):
@@ -20,8 +18,6 @@ def print_msg(msg):
     with print_lock:
         print(time_str + "  " + "\033[91m\033[1m" + msg + "\033[0m")
         
-
-
 if __name__ == '__main__':
     host = '127.0.0.1'  # server ip
     port = 5000         # server port
@@ -36,9 +32,6 @@ if __name__ == '__main__':
     except Exception as e:
         print_msg("Error during connection: " + str(e))
         sys.exit(1)
-
-
-
 
     # TODO: Implement client side of authentication protocol and store established 
     #       session key in the session_key variable as a byte string
@@ -81,8 +74,9 @@ if __name__ == '__main__':
         )
     )
     env_message = enc_key + iv + cipher_text
-    
-    
+    # TODO: End of the todo block
+    # --------------------------------------------------------------#
+    #
     # Print session key
     if session_key is None:
         print_msg ("No session key established!")
