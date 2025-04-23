@@ -17,14 +17,14 @@ def gen_client_rsa_keypair():
         format=serialization.PublicFormat.SubjectPublicKeyInfo
     )
     pem_pub.splitlines()[0]
-    with open("client_pubkey", "wb") as f:
+    with open("./Client_Auth_hmk/client_pubkey", "wb") as f:
         f.write(pem_pub)
     pem_pri = private_key.private_bytes(
             encoding=serialization.Encoding.PEM, 
             format=serialization.PrivateFormat.TraditionalOpenSSL, 
             encryption_algorithm=serialization.NoEncryption())
     pem_pri.splitlines()[0]
-    with open("client_prikey", "wb") as f:
+    with open("./Client_Auth_hmk/client_prikey", "wb") as f:
         f.write(pem_pri)
         
     return key
@@ -45,14 +45,14 @@ def gen_server_rsa_keypair():
         format=serialization.PublicFormat.SubjectPublicKeyInfo
     )
     pem_pub.splitlines()[0]
-    with open("server_pubkey", "wb") as f:
+    with open("./Client_Auth_hmk/server_pubkey", "wb") as f:
         f.write(pem_pub)
     pem_pri = private_key.private_bytes(
             encoding=serialization.Encoding.PEM, 
             format=serialization.PrivateFormat.TraditionalOpenSSL, 
             encryption_algorithm=serialization.NoEncryption())
     pem_pri.splitlines()[0]
-    with open("server_prikey", "wb") as f:
+    with open("./Client_Auth_hmk/server_prikey", "wb") as f:
         f.write(pem_pri)
 
     return key

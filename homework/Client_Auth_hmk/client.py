@@ -35,45 +35,15 @@ if __name__ == '__main__':
 
     # TODO: Implement client side of authentication protocol and store established 
     #       session key in the session_key variable as a byte string
-    session = os.urandom(32)
-    time_stmp = str(time.time()).encode()
-    padded_timestamp = time_stmp.ljust(32, b'\x00')
-    session_key = session + padded_timestamp
-    iv = os.urandom(16)
-    aes_key = os.urandom(32)
     
     '''
-    Notes from the crypto homework, no need to reinvent the wheel
-        sym_key was given directly to the function in the crypto file
-        param sym_key: the symmetric secret key (byte string)
-            I believe this maybe one of the areas where we combine multiple encryption types,
-            like the envelope method but with CBC mode. So generate data with sym_key, then
-            encrypt with RSA key then send data.
 
-        param iv: initial value used during encryption (byte string)
-
-        Data will probably be session key, this is the infor that really important
     '''
-    #Encrypting using AESCBS Mode
-    cipher = Cipher(algorithms.AES(aes_key), modes.CBC)
-    encryptor = cipher.encryptor()
+    #Set up for session key, IV, and aes_key
+    session = os.urandom(32)
+    time_stmp = str(time.time()).encode()
+    
 
-    #Padding
-    padder = padding.PKCS7(128).padder()
-    padded_data = padder.update(session_key) + padder.finalize()
-    cipher_text = encryptor.update(padded_data) + encryptor.finalize()
-
-    #Encrypt AES KEY
-    public_key = None # Retrieve key from file
-    enc_key = public_key.encrypt(
-        aes_key,
-        padding.OAEP(
-            mgf=padding.MGF1(algorithm=hashes.SHA256()),
-            algorithm=hashes.SHA256(),
-            label=None
-        )
-    )
-    env_message = enc_key + iv + cipher_text
     # TODO: End of the todo block
     # --------------------------------------------------------------#
     #
