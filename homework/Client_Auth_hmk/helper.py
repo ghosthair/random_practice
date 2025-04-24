@@ -57,6 +57,15 @@ def gen_server_rsa_keypair():
 
     return key
 
+def to_bytes(x, y=2):
+    bytes_x = x.to_bytes(y, byteorder='big')
+    return bytes_x
+
+def from_bytes(x, y=2):
+    x_num = int.from_bytes(x, 'big')
+    return x_num
+
+
 if __name__ == "__main__":
     gen_client_rsa_keypair()
     gen_server_rsa_keypair()

@@ -1,0 +1,21 @@
+David Khair
+
+For the Quick mutual authentication:
+
+K is the session key, once the session is sent securly it can be used to continously encrypt data, but will only be used for a session.
+Then K is also only going to be randomly generated so as not to be replicated later, and coupled wit a timestamp and sequence number.
+
+K is shared between Client and Server
+K is made up of S = session key, Seq = Sequence Number, T = Timestamp K = S + Seq + T
+
+K will be encrypted with the Servers public Key = (Pri_server, K)
+Then to ensure the vaidity of the Client it will be signed by Client Private Key = V = Pub_client (Pri_server, K)
+
+Server will then validate signature, once verified decrypt with their private key, and parse out K. 
+
+Seq will add one, time stamp is also confirmed to be within a tolerance of 10 seconds.
+
+Once confirmed Server will send back a response, with the message encrypted with the clients public key
+        M_server = (Pub_client, K_updated)
+
+Once client receives the response and also confirms sequence number session key can now be used.

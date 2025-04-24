@@ -3,9 +3,10 @@ import threading
 import sys
 import datetime
 import time, os
-from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
-from cryptography.hazmat.primitives.asymmetric import rsa, padding
-from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import padding
+from cryptography.hazmat.primitives import hashes, serialization
+from helper import to_bytes, from_bytes
+import binascii
 
 print_lock = threading.Lock()  # mutex lock for display access
 
@@ -36,22 +37,58 @@ if __name__ == '__main__':
     # TODO: Implement client side of authentication protocol and store established 
     #       session key in the session_key variable as a byte string
     
-    '''
+    session_key = os.urandom(26)
+    sequence = 10000
+    seq_bytes = to_bytes(sequence, 2)
+    time_stmp = int(time.time())
+    time_bytes = time_stmp.to_bytes(4, 'big')
+    session_msg = session_key + seq_bytes + time_bytes
 
-    '''
-    #Set up for session key, IV, and aes_key
-    session = os.urandom(32)
-    time_stmp = str(time.time()).encode()
-    
+    #Grabbing Keys
+    with open("./Client_Auth_hmk/server_pubkey", "rb") as f:
+        pem_pub = f.read()
+    public_key = serialization.load_pem_public_key(pem_pub)
+
+    with open("./Client_Auth_hmk/client_prikey", "rb") as e:
+        client_private_key = serialization.load_pem_private_key(
+            e.read(),
+            password=None
+        )
+
+    #Encrypting message
+    ciphertext = public_key.encrypt(
+        session_msg,
+        padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()),
+            algorithm=hashes.SHA256(),
+            label=None
+        )
+    )
+
+    #Signing message
+    signed_session = client_private_key.sign(
+        ciphertext,
+        padding.PSS(
+            mgf=padding.MGF1(hashes.SHA256()),
+            salt_length=padding.PSS.MAX_LENGTH
+        ),
+        hashes.SHA256()
+    )
+
+    #Creating the message of the signed version and the message
+    full_msg = ciphertext + signed_session
+    #Sending the consolidated message.
+    client_socket.sendall(full_msg)
 
     # TODO: End of the todo block
     # --------------------------------------------------------------#
     #
+
     # Print session key
     if session_key is None:
         print_msg ("No session key established!")
     else:
-        print_msg ("Established session key: " + str(binascii.hexlify(session_key)))
+        print_msg ("Established session key: " + str(binascii.hexlify(full_msg)))
 
     # Close the connection
     if client_socket:
