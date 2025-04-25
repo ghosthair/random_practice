@@ -5,8 +5,9 @@ import datetime
 import time, os
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import hashes, serialization
-from helper import to_bytes, from_bytes
+from helper import to_bytes, from_bytes, gen_server_rsa_keypair
 import binascii
+
 
 print_lock = threading.Lock()  # mutex lock for display access
 
@@ -33,6 +34,7 @@ def handle_client(client_socket, client_ip, client_port):
     
     # TODO: Implement server side of authentication protocol and store established 
     #       session key in the session_key variable as a byte string
+
 
     # Grabbing needed keys
     with open("./Client_Auth_hmk/client_pubkey", "rb") as f:
@@ -72,16 +74,16 @@ def handle_client(client_socket, client_ip, client_port):
     )
 
     # Parsing out the session key to get the actual key.
-    session_dec_key = from_bytes(plaintext[:26])
+    # session_dec_key = from_bytes(plaintext[:26])
     dec_sequence = from_bytes(plaintext[26:28])
     dec_time = from_bytes(plaintext[28:32])
 
     # add the actual impacts if time is oleder than 10 seconds
     current_time = time.time()
-    if dec_time - current_time <=10:
-        session_key = None
+    if dec_time - current_time <= 10:
         print("Time check is good.")
     else:
+        session_key = None
         print("Time came back out of bounds.")
 
     #Adding one to the sequence number, for addiditonal checks

@@ -5,7 +5,7 @@ import datetime
 import time, os
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import hashes, serialization
-from helper import to_bytes, from_bytes
+from helper import to_bytes, from_bytes, gen_client_rsa_keypair
 import binascii
 
 print_lock = threading.Lock()  # mutex lock for display access
@@ -81,7 +81,19 @@ if __name__ == '__main__':
     client_socket.sendall(full_msg)
 
     message_from_server = client_socket.recv(1024)
-    print(f"Message received from the server: {message_from_server}")
+    ses_from_server = client_private_key.decrypt(
+        message_from_server, padding.OAEP(
+            mgf=padding.MGF1(algorithm=hashes.SHA256()), 
+            algorithm=hashes.SHA256(),
+        label=None
+        )
+    )
+
+    # print(f"Message received from the server: {len(ses_from_server)}")
+    return_sequence = from_bytes(ses_from_server[26:28])
+    return_time = from_bytes(ses_from_server[28:])
+    print(f"The returned sequence number is: {return_sequence}\nThe returned time stamp is:{return_time}")
+
 
     # TODO: End of the todo block
     # --------------------------------------------------------------#
