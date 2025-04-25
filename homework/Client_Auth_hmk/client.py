@@ -80,6 +80,9 @@ if __name__ == '__main__':
     #Sending the consolidated message.
     client_socket.sendall(full_msg)
 
+    message_from_server = client_socket.recv(1024)
+    print(f"Message received from the server: {message_from_server}")
+
     # TODO: End of the todo block
     # --------------------------------------------------------------#
     #
