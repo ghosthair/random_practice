@@ -1,0 +1,23 @@
+Step 1: To communicate Diffie-Hellman will be used, a generator and a large prime number are picked.
+         These are public numbers and do not need to be shared.
+Step 2: A & B  will retrieve a random number from T that is 20 bits long. t_key = rand(20 bit)
+Step 3: A generates a random private number a size of 512 bits. a=rand(512)
+Step 4: A generates a public key with Diffie-Hellman pub_a = g^a mod p
+Step 5: B generates a random private number, size of 512 bits. b=rand(512)
+Step 6: B generates a public key with Diffie-Hellman pub_b = g^b mod p
+Step 7: A & B will generate the share secret after the trading of the keys. 
+	k_dh = (pub_b)^a mod p (A generating secret)
+	k_dh = (pub_a)^b mod p (B generating secret) 
+Step 7: A & B will generate an hmac from the shared secret k_dh and t_key
+Step 8: A & B will confirm the original message sent from one another by generating their own 
+	hmac to confirm the legitimacy of the message. 
+Step 9: A & B will generate session key from k_dh. This will be done using SHA256. s_key = SHA256(k_dh)
+Step 10: AESGCM will be used to transmit information back and forth. iv will be created with a nonce be 
+	each sender. message and mac are generated with AESGCM, it will then send this to the 
+	other to decrypt and compare MACs.
+
+This protocol design reduces the risk of a Man-in-the-Middle (MitM) attack through the use of integrity
+checking throughout the process. The first one is the t_key and using this to create a hmac to have each
+party check in step 8. Since the asymmetric encryption is not available allows for each user to check
+that the other is who they say they are since the value is given from T. This also stays within the
+constraint of the 20 bits of information.  
